@@ -1,0 +1,9 @@
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\bin\Debug\netcoreapp3.1\WeatherApp.Common.deps.json
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\bin\Debug\netcoreapp3.1\WeatherApp.Common.dll
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\bin\Debug\netcoreapp3.1\WeatherApp.Common.pdb
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\obj\Debug\netcoreapp3.1\WeatherApp.Common.csprojAssemblyReference.cache
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\obj\Debug\netcoreapp3.1\WeatherApp.Common.csproj.CoreCompileInputs.cache
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\obj\Debug\netcoreapp3.1\WeatherApp.Common.AssemblyInfoInputs.cache
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\obj\Debug\netcoreapp3.1\WeatherApp.Common.AssemblyInfo.cs
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\obj\Debug\netcoreapp3.1\WeatherApp.Common.dll
+C:\Users\macko\Documents\Project\BlazorServer\WeatherApp.Common\obj\Debug\netcoreapp3.1\WeatherApp.Common.pdb
