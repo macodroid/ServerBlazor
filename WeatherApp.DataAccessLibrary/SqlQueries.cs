@@ -26,10 +26,10 @@ namespace Interfaces.WeatherDataAccessLibrary
         
         public Task<List<Weather>> GetWeatherDataByDates(DateTime fromDate, DateTime toDate)
         {
+            toDate = toDate.AddDays(1);
             var fromDateFormat = fromDate.ToString("yyyy-MM-dd");
             var toDateFormat = toDate.ToString("yyyy-MM-dd");
-            string sqlQuery = $"select * from {_schema}.{_table} where date between \'2020-04-01\' and \'2020-04-01\'";
-            // string sqlQuery = $"select * from {_schema}.{_table} where date between \'{fromDateFormat}\' and \'{toDateFormat}\'";
+            var sqlQuery = $"select * from {_schema}.{_table} where date between \'{fromDateFormat}\' and \'{toDateFormat}\'";
 
             return _dataAccess.LoadData<Weather, dynamic>(sqlQuery, new{ });
         }

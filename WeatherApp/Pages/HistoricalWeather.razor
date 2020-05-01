@@ -86,8 +86,8 @@ else
     private async Task DisplayHistoricalDataBetweenDates()
     {
        _historicalData = await SqlQueries.GetWeatherDataByDates(_dateFilter.FromDate, _dateFilter.ToDate);
-
-         _config = new LineConfig()
+        _historicalData.RemoveAt(_historicalData.Count-1);
+        _config = new LineConfig()
          {
              Options = new LineOptions()
              {
@@ -130,9 +130,7 @@ else
                              Time = new TimeOptions
                              {
                                  Unit = TimeMeasurement.Hour,
-                                 Round = TimeMeasurement.Hour,
-                                 TooltipFormat = "MM.DD.YYYY HH:MM",
-                                 //DisplayFormats = TimeDisplayFormats.DE_CH
+                                 Round = TimeMeasurement.Minute,
                              },
                              ScaleLabel = new ScaleLabel
                              {
@@ -156,7 +154,6 @@ else
             SteppedLine = SteppedLine.False,
             Hidden = false
         };
-        //var dateAndTime = _historicalData.Select(_ => _.Date + _.Local_Time);
         var chartData = _historicalData.Select(_ => new TimeTuple<double>(new Moment(_.Date), _.Temp));
         _WeatherDataset.AddRange(chartData);
         _config.Data.Datasets.Add(_WeatherDataset);

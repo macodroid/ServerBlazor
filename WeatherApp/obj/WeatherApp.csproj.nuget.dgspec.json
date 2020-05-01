@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp\\WeatherApp.csproj": {}
+    "/home/maco/Documents/Project/ServerBlazor/WeatherApp/WeatherApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.Common\\WeatherApp.Common.csproj": {
+    "/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/WeatherApp.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.Common\\WeatherApp.Common.csproj",
+        "projectUniqueName": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/WeatherApp.Common.csproj",
         "projectName": "WeatherApp.Common",
-        "projectPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.Common\\WeatherApp.Common.csproj",
-        "packagesPath": "C:\\Users\\macko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.Common\\obj\\",
+        "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/WeatherApp.Common.csproj",
+        "packagesPath": "/home/maco/.nuget/packages/",
+        "outputPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\macko\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/maco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,38 +50,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\WeatherApp.DataAccessLibrary.csproj": {
+    "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\WeatherApp.DataAccessLibrary.csproj",
+        "projectUniqueName": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj",
         "projectName": "WeatherApp.DataAccessLibrary",
-        "projectPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\WeatherApp.DataAccessLibrary.csproj",
-        "packagesPath": "C:\\Users\\macko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\obj\\",
+        "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj",
+        "packagesPath": "/home/maco/.nuget/packages/",
+        "outputPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\macko\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/maco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.Common\\WeatherApp.Common.csproj": {
-                "projectPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.Common\\WeatherApp.Common.csproj"
+              "/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/WeatherApp.Common.csproj": {
+                "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/WeatherApp.Common.csproj"
               }
             }
           }
@@ -128,38 +118,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp\\WeatherApp.csproj": {
+    "/home/maco/Documents/Project/ServerBlazor/WeatherApp/WeatherApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp\\WeatherApp.csproj",
+        "projectUniqueName": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/WeatherApp.csproj",
         "projectName": "WeatherApp",
-        "projectPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp\\WeatherApp.csproj",
-        "packagesPath": "C:\\Users\\macko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp\\obj\\",
+        "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/WeatherApp.csproj",
+        "packagesPath": "/home/maco/.nuget/packages/",
+        "outputPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\macko\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/maco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\WeatherApp.DataAccessLibrary.csproj": {
-                "projectPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\WeatherApp.DataAccessLibrary.csproj"
+              "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj": {
+                "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj"
               }
             }
           }
@@ -196,7 +181,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
         }
       }
     }
