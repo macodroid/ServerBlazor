@@ -9,5 +9,6 @@ namespace Interfaces.WeatherDataAccessLibrary
     {
         Task<List<Weather>> GetAllWeatherData();
         Task<List<Weather>> GetWeatherDataByDates(DateTime fromDate, DateTime toDate);
+        Task<List<Weather>> GetTodayWeather();
     }
 }

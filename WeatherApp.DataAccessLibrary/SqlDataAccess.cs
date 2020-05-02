@@ -1,16 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Linq;
 using Npgsql;
+using WeatherApp.Common.Models;
 
 namespace Interfaces.WeatherDataAccessLibrary
 {
     public class SqlDataAccess : ISqlDataAccess
     {
         private readonly IConfiguration _config;
-
+        public event EventHandler<Weather> OnWeatherChange;
         public string ConnectionStringName { get; set; } = "Default";
 
         public SqlDataAccess(IConfiguration config)
@@ -38,7 +41,29 @@ namespace Interfaces.WeatherDataAccessLibrary
             {
                 await connection.ExecuteAsync(sql, parameters);
             }
+        }
 
+        public async Task<List<Weather>> ReceiveNotify()
+        {
+            var connectionString = _config.GetConnectionString(ConnectionStringName);
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+                var cmd = new NpgsqlCommand("LISTEN weather_insert", connection).ExecuteNonQuery();
+                connection.Notification += async (o, e) =>
+                {
+                    var jsonNotify = JObject.Parse(e.Payload);
+                    var weatherData = jsonNotify.ToObject<Weather>();
+                    OnWeatherChange?.Invoke(this, weatherData);
+                };
+                
+                while (true)
+                {
+                    await connection.WaitAsync();
+                }
+            }
+            
+            
         }
         
     }
