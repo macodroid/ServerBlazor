@@ -5,7 +5,6 @@
 @using WeatherApp.Common.Models
 @using Interfaces.WeatherDataAccessLibrary
 @using ChartJs.Blazor.Charts
-@using ChartJs.Blazor.ChartJS
 @using ChartJs.Blazor.ChartJS.Common.Properties
 @using ChartJs.Blazor.ChartJS.Common.Enums
 @using ChartJs.Blazor.ChartJS.Common.Axes
@@ -28,38 +27,11 @@
     </p>
     <p>
         <label>To date</label>
-        <InputDate id="toDate" @bind-Value="_dateFilter.ToDate"></InputDate>
+        <InputDate id="toDate" @bind-Value="_dateFilter.ToDate" ></InputDate>
     </p>
-    
+    @* TODO: select with data to display*@
     <button type="submit">Display</button>
 </EditForm>
-
-@* @if (_historicalData == null) *@
-@* { *@
-@*     <p><em>Please select time period of historical data.</em></p> *@
-@* } *@
-@* else *@
-@* { *@
-@*     <table class="table"> *@
-@*         <thead> *@
-@*             <tr> *@
-@*                 <th>Date</th> *@
-@*                 <th>Time</th> *@
-@*                 <th>Temp.(C)</th> *@
-@*             </tr> *@
-@*         </thead> *@
-@*         <tbody> *@
-@*             @foreach (var data in _historicalData) *@
-@*             { *@
-@*                 <tr> *@
-@*                     <td>@data.Date.ToString("yyyy-MM-dd")</td> *@
-@*                     <td>@data.Local_Time</td> *@
-@*                     <td>@data.Temp</td> *@
-@*                 </tr> *@
-@*             } *@
-@*         </tbody> *@
-@*     </table> *@
-@* } *@
 
 @if (_historicalData == null)
 {
@@ -67,27 +39,23 @@
 }
 else
 {
-     <ChartJsLineChart @ref="_lineChartJs" Config="@_config" Width="600" Height="300" />
+    <h3>Temperature</h3>
+    <ChartJsLineChart @ref="_lineChartJs" Config="@_config" Width="600" Height="300" />
 }
 
 @code
 {
-    private List<Weather> _historicalData ;
+    private List<WeatherModel> _historicalData ;
     private DateFilter _dateFilter = new DateFilter();
     private LineConfig _config;
     private ChartJsLineChart _lineChartJs;
     private LineDataset<TimeTuple<double>> _WeatherDataset;
 
-    // protected override async Task OnInitializedAsync()
-    // {
-    //     _historicalData = await SqlQueries.GetAllWeatherData();
-    // }
-
     private async Task DisplayHistoricalDataBetweenDates()
     {
-       _historicalData = await SqlQueries.GetWeatherDataByDates(_dateFilter.FromDate, _dateFilter.ToDate);
-
-         _config = new LineConfig()
+        _historicalData = await SqlQueries.GetWeatherDataByDates(_dateFilter.FromDate, _dateFilter.ToDate);
+        _historicalData.RemoveAt(_historicalData.Count-1);
+        _config = new LineConfig()
          {
              Options = new LineOptions()
              {
@@ -114,7 +82,7 @@ else
                          {
                              ScaleLabel = new ScaleLabel
                              {
-                                 LabelString = "Weight"
+                                 LabelString = "Temperature"
                              }
                          }
                      },
@@ -130,13 +98,11 @@ else
                              Time = new TimeOptions
                              {
                                  Unit = TimeMeasurement.Hour,
-                                 Round = TimeMeasurement.Hour,
-                                 TooltipFormat = "MM.DD.YYYY HH:MM",
-                                 //DisplayFormats = TimeDisplayFormats.DE_CH
+                                 Round = TimeMeasurement.Minute,
                              },
                              ScaleLabel = new ScaleLabel
                              {
-                                 LabelString = "Date"
+                                 LabelString = "Time"
                              }
                          }
                      }
@@ -156,7 +122,7 @@ else
             SteppedLine = SteppedLine.False,
             Hidden = false
         };
-        //var dateAndTime = _historicalData.Select(_ => _.Date + _.Local_Time);
+        
         var chartData = _historicalData.Select(_ => new TimeTuple<double>(new Moment(_.Date), _.Temp));
         _WeatherDataset.AddRange(chartData);
         _config.Data.Datasets.Add(_WeatherDataset);

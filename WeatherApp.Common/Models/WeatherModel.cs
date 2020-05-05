@@ -6,12 +6,9 @@ using System.Runtime.Serialization;
 
 namespace WeatherApp.Common.Models
 {
-    public class Weather
+    public class WeatherModel
     {
-        private DateTime _dateAndTime { get; set; }
-        
         public DateTime Date { get; set; }
-        public TimeSpan Local_Time { get; set; }
         public double Temp { get; set; }
         public double FeelsLike { get; set; }
         public double TempMax { get; set; }
@@ -21,13 +18,5 @@ namespace WeatherApp.Common.Models
         public string Condition { get; set; }
         public string Icon { get; set; }
 
-        public DateTime DateAndTime
-        {
-            get
-            {
-                return  DateTime. MinValue;
-            }
-            set => _dateAndTime = Date+Local_Time;
-        }
     }
 }

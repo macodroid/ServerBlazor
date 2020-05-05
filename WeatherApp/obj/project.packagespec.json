@@ -1,26 +1,25 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp\\WeatherApp.csproj",
+    "projectUniqueName": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/WeatherApp.csproj",
     "projectName": "WeatherApp",
-    "projectPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp\\WeatherApp.csproj",
-    "outputPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp\\obj\\",
+    "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/WeatherApp.csproj",
+    "outputPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-    ],
     "originalTargetFrameworks": [
       "netcoreapp3.1"
     ],
     "sources": {
-      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
-          "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\WeatherApp.DataAccessLibrary.csproj": {
-            "projectPath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\WeatherApp.DataAccessLibrary.csproj"
+          "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj": {
+            "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj"
+          },
+          "/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/WeatherWorkerService.csproj": {
+            "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/WeatherWorkerService.csproj"
           }
         }
       }
@@ -57,7 +56,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
     }
   }
 }

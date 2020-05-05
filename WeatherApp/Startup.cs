@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WeatherApp.Data;
+using WeatherDataAccessLibrary;
 
 namespace WeatherApp
 {
@@ -26,7 +27,6 @@ namespace WeatherApp
             services.AddSingleton<WeatherForecastService>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<ISqlQueries, SqlQueries>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

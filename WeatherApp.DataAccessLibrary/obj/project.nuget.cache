@@ -1,16 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "mDXUEQE6wQZYl75MqqWDQVj01uu8Wb3rbuYc5Tcpy+OAIvpahwIAi8Cp66UnaaBq1aKzVpAjV8TCg4E3CVTJvg==",
+  "dgSpecHash": "J4o+2WPqawX2yJJHvh0j+XgJTUo8x7wmHbsH9lUU9yqipeMLdN8/5cIpfAN54IZj3bmVOM6Xk33VdIa3r0as3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.DataAccessLibrary\\WeatherApp.DataAccessLibrary.csproj",
+  "projectFilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\macko\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
-    "C:\\Users\\macko\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0-preview.3.20215.2\\microsoft.extensions.configuration.abstractions.5.0.0-preview.3.20215.2.nupkg.sha512",
-    "C:\\Users\\macko\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0-preview.3.20215.2\\microsoft.extensions.primitives.5.0.0-preview.3.20215.2.nupkg.sha512",
-    "C:\\Users\\macko\\.nuget\\packages\\npgsql\\4.1.3.1\\npgsql.4.1.3.1.nupkg.sha512",
-    "C:\\Users\\macko\\.nuget\\packages\\system.memory\\4.5.2\\system.memory.4.5.2.nupkg.sha512",
-    "C:\\Users\\macko\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
-    "C:\\Users\\macko\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0-preview.3.20214.6\\system.runtime.compilerservices.unsafe.5.0.0-preview.3.20214.6.nupkg.sha512"
+    "/home/maco/.nuget/packages/dapper/2.0.35/dapper.2.0.35.nupkg.sha512",
+    "/home/maco/.nuget/packages/microsoft.extensions.configuration.abstractions/5.0.0-preview.3.20215.2/microsoft.extensions.configuration.abstractions.5.0.0-preview.3.20215.2.nupkg.sha512",
+    "/home/maco/.nuget/packages/microsoft.extensions.primitives/5.0.0-preview.3.20215.2/microsoft.extensions.primitives.5.0.0-preview.3.20215.2.nupkg.sha512",
+    "/home/maco/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/maco/.nuget/packages/npgsql/4.1.3.1/npgsql.4.1.3.1.nupkg.sha512",
+    "/home/maco/.nuget/packages/system.memory/4.5.2/system.memory.4.5.2.nupkg.sha512",
+    "/home/maco/.nuget/packages/system.reflection.emit.lightweight/4.7.0/system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+    "/home/maco/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0-preview.3.20214.6/system.runtime.compilerservices.unsafe.5.0.0-preview.3.20214.6.nupkg.sha512"
   ],
   "logs": []
 }

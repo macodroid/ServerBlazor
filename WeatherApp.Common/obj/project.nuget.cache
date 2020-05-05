@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yBgX7DUgu8jrqrgbRJVgdfYROqjq07pqb22HOiq6zI7GuomUzfdWL/Mmc3ORf0nyUQVQlg00KnOMx8k4fOx/CQ==",
+  "dgSpecHash": "Ch1fEF2sxKkSzVx0TCmNCoWc6gqhNoABNgJ8jaQ8zscCPriMwVnLJ204h05gGVugzCFMy2JJny7NtA1EDcCmLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\macko\\Documents\\Project\\BlazorServer\\WeatherApp.Common\\WeatherApp.Common.csproj",
+  "projectFilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/WeatherApp.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
