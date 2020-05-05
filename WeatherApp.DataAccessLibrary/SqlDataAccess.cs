@@ -13,7 +13,7 @@ namespace Interfaces.WeatherDataAccessLibrary
     public class SqlDataAccess : ISqlDataAccess
     {
         private readonly IConfiguration _config;
-        public event EventHandler<Weather> OnWeatherChange;
+        public event EventHandler<WeatherModel> OnWeatherChange;
         public string ConnectionStringName { get; set; } = "Default";
 
         public SqlDataAccess(IConfiguration config)
@@ -43,7 +43,7 @@ namespace Interfaces.WeatherDataAccessLibrary
             }
         }
 
-        public async Task<List<Weather>> ReceiveNotify()
+        public async Task<List<WeatherModel>> ReceiveNotify()
         {
             var connectionString = _config.GetConnectionString(ConnectionStringName);
             using (var connection = new NpgsqlConnection(connectionString))
@@ -53,17 +53,15 @@ namespace Interfaces.WeatherDataAccessLibrary
                 connection.Notification += async (o, e) =>
                 {
                     var jsonNotify = JObject.Parse(e.Payload);
-                    var weatherData = jsonNotify.ToObject<Weather>();
+                    var weatherData = jsonNotify.ToObject<WeatherModel>();
                     OnWeatherChange?.Invoke(this, weatherData);
                 };
-                
+
                 while (true)
                 {
                     await connection.WaitAsync();
                 }
             }
-            
-            
         }
         
     }

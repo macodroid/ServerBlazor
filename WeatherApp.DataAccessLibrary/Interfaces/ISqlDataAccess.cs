@@ -10,8 +10,8 @@ namespace Interfaces.WeatherDataAccessLibrary
         string ConnectionStringName { get; set; }
         Task<List<T>> LoadData<T, U>(string sql, U parameters);
         Task SaveData<T>(string sql, T parameters);
-        Task<List<Weather>> ReceiveNotify();
-        event EventHandler<Weather> OnWeatherChange;
+        Task<List<WeatherModel>> ReceiveNotify();
+        event EventHandler<WeatherModel> OnWeatherChange;
 
     }
 }

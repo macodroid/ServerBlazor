@@ -43,7 +43,7 @@ else
 @code
 {
 
-    private List<Weather> _weatherData;
+    private List<WeatherModel> _weatherData;
 
     protected override async Task OnInitializedAsync()
     {
@@ -52,7 +52,7 @@ else
         SqlDataAccess.OnWeatherChange += SqlDataAccessOnOnWeatherChange;
     }
 
-    private async void SqlDataAccessOnOnWeatherChange(object? sender, Weather e)
+    private async void SqlDataAccessOnOnWeatherChange(object? sender, WeatherModel e)
     {
         _weatherData.Add(e);
         
