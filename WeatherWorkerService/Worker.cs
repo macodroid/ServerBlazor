@@ -33,7 +33,7 @@ namespace WeatherWorkerService
                 var apiData = GetForecast();
                 var weather = new WeatherModelWorker()
                 {
-                    Date = DateTime.Now,
+                    Date = DateTime.UtcNow,
                     Temp = apiData.main.temp,
                     Pressure = apiData.main.pressure,
                     Humidity = apiData.main.humidity,

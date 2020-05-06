@@ -163,3 +163,5 @@ C:/Users/macko/Documents/Project/BlazorServer/WeatherApp/bin/Debug/netcoreapp3.1
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/WeatherWorkerService.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/WeatherWorkerService.pdb
+/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Forecast.razor.g.cs
+/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Pages/Forecast.razor.g.cs
