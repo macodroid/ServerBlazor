@@ -48,7 +48,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         _weatherData = await SqlQueries.GetTodayWeather();
-        await SqlDataAccess.ReceiveNotify();
+        SqlDataAccess.ReceiveNotify();
         SqlDataAccess.OnWeatherChange += SqlDataAccessOnOnWeatherChange;
     }
 
