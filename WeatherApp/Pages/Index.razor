@@ -18,7 +18,7 @@ else
         <thead>
         <tr>
             <th>Date</th>
-            <th>Temp</th>
+            <th>Temperature</th>
             <th>Pressure</th>
             <th>Humidity</th>
         </tr>
@@ -27,9 +27,9 @@ else
         @foreach (var data in _weatherData)
         {
             <tr>
-                <td>@data.Date.ToString("HH:mm")</td>
-                <td>@Math.Ceiling(data.Temp)</td>
-                <td>@data.Pressure</td>
+                <td>@data.Date.ToString("HH"):00</td>
+                <td>@Math.Ceiling(data.Temp)&deg</td>
+                <td>@data.Pressure (mmHg)</td>
                 <td>@data.Humidity%</td>
             </tr>
         }

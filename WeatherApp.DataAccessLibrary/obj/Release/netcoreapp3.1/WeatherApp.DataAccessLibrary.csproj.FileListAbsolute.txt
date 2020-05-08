@@ -1,0 +1,12 @@
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/bin/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.deps.json
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/bin/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.dll
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/bin/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.pdb
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/bin/Release/netcoreapp3.1/WeatherApp.Common.dll
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/bin/Release/netcoreapp3.1/WeatherApp.Common.pdb
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/obj/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.csprojAssemblyReference.cache
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/obj/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.csproj.CoreCompileInputs.cache
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/obj/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.AssemblyInfoInputs.cache
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/obj/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.AssemblyInfo.cs
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/obj/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.csproj.CopyComplete
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/obj/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.dll
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/obj/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.pdb
