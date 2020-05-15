@@ -91,10 +91,7 @@ C:/Users/macko/Documents/Project/BlazorServer/WeatherApp/bin/Debug/netcoreapp3.1
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/WeatherApp.MvcApplicationPartsAssemblyInfo.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/WeatherApp.RazorComponent.input.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/App.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Counter.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Error.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/FetchData.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/HistoricalWeather.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Index.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/MainLayout.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs
@@ -105,10 +102,7 @@ C:/Users/macko/Documents/Project/BlazorServer/WeatherApp/bin/Debug/netcoreapp3.1
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/WeatherApp.TagHelpers.output.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/WeatherApp.RazorCoreGenerate.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/App.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Pages/Counter.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Pages/Error.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Pages/FetchData.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Pages/HistoricalWeather.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Pages/Index.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Shared/MainLayout.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs
@@ -165,3 +159,5 @@ C:/Users/macko/Documents/Project/BlazorServer/WeatherApp/bin/Debug/netcoreapp3.1
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/WeatherWorkerService.pdb
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Forecast.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Pages/Forecast.razor.g.cs
+/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/HistoricalTemperature.razor.g.cs
+/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Debug/netcoreapp3.1/Razor/Pages/HistoricalTemperature.razor.g.cs

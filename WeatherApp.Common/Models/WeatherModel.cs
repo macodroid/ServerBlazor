@@ -1,13 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.Serialization;
 
 namespace WeatherApp.Common.Models
 {
     public class WeatherModel
     {
+        
         public DateTime Date { get; set; }
         public double Temp { get; set; }
         public double FeelsLike { get; set; }

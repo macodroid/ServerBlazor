@@ -24,7 +24,6 @@ namespace WeatherApp
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<ISqlQueries, SqlQueries>();
         }

@@ -34,9 +34,9 @@ namespace WeatherDataAccessLibrary
             return _dataAccess.LoadData<WeatherModel, dynamic>(sqlQuery, new{ });
         }
         
-        public Task<List<WeatherModel>> GetWeatherDataByDates(DateTime fromDate, DateTime toDate)
+        public Task<List<WeatherModel>> GetHistoricalWeatherDataByDate(DateTime fromDate)
         {
-            toDate = toDate.AddDays(1);
+            var toDate = fromDate.AddDays(1);
             var fromDateFormat = fromDate.ToString(_dateFormat);
             var toDateFormat = toDate.ToString(_dateFormat);
             var sqlQuery = $"select * from {_schema}.{_table} where date between \'{fromDateFormat}\' and \'{toDateFormat}\'";
