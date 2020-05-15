@@ -31,12 +31,18 @@ namespace WeatherWorkerService
             while (!stoppingToken.IsCancellationRequested)
             {
                 var apiData = GetForecast();
+                
                 var weather = new WeatherModelWorker()
                 {
                     Date = DateTime.Now,
-                    Temp = apiData.main.temp,
-                    Pressure = apiData.main.pressure,
-                    Humidity = apiData.main.humidity,
+                    Temp = apiData.main.Temp,
+                    FeelsLike = apiData.main.FeelsLike,
+                    Pressure = apiData.main.Pressure,
+                    Humidity = apiData.main.Humidity,
+                    Condition = apiData.weather[0].main,
+                    Description = apiData.weather[0].description,
+                    Icon = apiData.weather[0].icon
+                    
                 };
 
                 await _restUtils.InsertCurrentWeatherData(weather);

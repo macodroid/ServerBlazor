@@ -17,6 +17,7 @@ namespace WeatherApp.Common.Models
         public double Humidity { get; set; }
         public string Condition { get; set; }
         public string Icon { get; set; }
+        public string Description { get; set; }
 
     }
 }

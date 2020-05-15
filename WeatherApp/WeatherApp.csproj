@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Pages\HistoricalWeather.razor">
+    <Content Update="Pages\HistoricalTemperature.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
     <Content Update="Pages\Forecast.razor">

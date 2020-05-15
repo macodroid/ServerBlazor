@@ -1,4 +1,4 @@
-﻿@page "/historicalWeather"
+﻿@page "/historicalTemperature"
 
 
 @using WeatherApp.Data
@@ -17,6 +17,8 @@
 
 @inject ISqlQueries SqlQueries
 
+
+
 <h1>Historical weather data in Bratislava</h1>
 
 <h3>Get historical data between dates.</h3>
@@ -27,6 +29,7 @@
         <label style="margin-left: 10px">To date</label>
         <InputDate id="toDate" @bind-Value="_dateFilter.ToDate" ></InputDate>
     </div>
+   
     @* TODO: select with data to display*@
     <button type="submit">Display</button>
 </EditForm>
@@ -95,8 +98,8 @@ else
                              },
                              Time = new TimeOptions
                              {
-                                 Unit = TimeMeasurement.Millisecond,
-                                 Round = TimeMeasurement.Millisecond,
+                                 Unit = TimeMeasurement.Hour,
+                                 Round = TimeMeasurement.Hour,
                                  TooltipFormat = "DD.MM.YYYY HH:mm:ss:SSS",
                                  DisplayFormats = TimeDisplayFormats.DE_CH
                              },

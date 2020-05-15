@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Dapper;
 using Npgsql;
@@ -23,10 +24,12 @@ namespace WeatherWorkerService
         
         public Task InsertCurrentWeatherData(WeatherModelWorker weatherModel)
         {
+            var date = weatherModel.Date;
+            var newDate = new DateTime(date.Year,date.Month,date.Day,date.Hour,0,0);
             var sql =
-                $"INSERT INTO {_schema}.{_table} (date, temp, pressure, humidity)" +
-                $" values ('{weatherModel.Date:yyyy-MM-dd HH:mm:ss}',{weatherModel.Temp},{weatherModel.Pressure}," +
-                $"{weatherModel.Humidity})";
+                $"INSERT INTO {_schema}.{_table} (date, temp, pressure, humidity, condition,icon,feels_like,description)" +
+                $" values ('{newDate.ToString("yyyy-MM-dd HH:mm:ss")}',{weatherModel.Temp},{weatherModel.Pressure}" +
+                $" ,{weatherModel.Humidity},'{weatherModel.Condition}','{weatherModel.Icon}',{weatherModel.FeelsLike},'{weatherModel.Description}')";
 
             return SaveData(sql, weatherModel);
         }

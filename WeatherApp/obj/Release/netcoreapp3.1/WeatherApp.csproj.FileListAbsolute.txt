@@ -65,7 +65,6 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/Error.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/FetchData.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/Forecast.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/HistoricalWeather.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/Index.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Shared/MainLayout.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs
@@ -80,7 +79,6 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/Error.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/FetchData.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/Forecast.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/HistoricalWeather.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/Index.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Shared/MainLayout.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs
@@ -100,3 +98,5 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.pdb
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.genruntimeconfig.cache
+/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/HistoricalTemperature.razor.g.cs
+/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/HistoricalTemperature.razor.g.cs

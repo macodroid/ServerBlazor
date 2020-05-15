@@ -19,18 +19,28 @@ else
         <tr>
             <th>Date</th>
             <th>Temperature</th>
+            <th>Feels like</th>
             <th>Pressure</th>
             <th>Humidity</th>
+            <th>Icon</th>
+            <th>Condition</th>
+            <th>Description</th>
         </tr>
         </thead>
         <tbody>
         @foreach (var data in _weatherData)
         {
             <tr>
-                <td>@data.Date.ToString("HH"):00</td>
-                <td>@Math.Ceiling(data.Temp)&deg</td>
-                <td>@data.Pressure (mmHg)</td>
-                <td>@data.Humidity%</td>
+                <td style="vertical-align: middle">@data.Date.ToString("HH:mm")</td>
+                <td style="vertical-align: middle">@Math.Ceiling(data.Temp)&deg</td>
+                <td style="vertical-align: middle">@Math.Ceiling(data.FeelsLike)&deg</td>
+                <td style="vertical-align: middle">@data.Pressure (mmHg)</td>
+                <td style="vertical-align: middle">@data.Humidity%</td>
+                <td style="vertical-align: middle">
+                    <img src="http://openweathermap.org/img/wn/@data.Icon.Trim()@@2x.png" alt="icon of weather condition" height="50px">
+                </td>
+                <td style="vertical-align: middle">@data.Condition</td>
+                <td style="vertical-align: middle">@data.Description</td>
             </tr>
         }
         </tbody>
