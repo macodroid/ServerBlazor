@@ -1,11 +1,10 @@
-using Interfaces.WeatherDataAccessLibrary;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WeatherApp.Data;
 using WeatherDataAccessLibrary;
+using WeatherDataAccessLibrary.Interfaces;
 
 namespace WeatherApp
 {
@@ -26,6 +25,7 @@ namespace WeatherApp
             services.AddServerSideBlazor();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<ISqlQueries, SqlQueries>();
+            services.AddTransient<IDatabaseNotifications, DatabaseNotifications>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

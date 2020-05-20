@@ -3,7 +3,7 @@
 
 @using WeatherApp.Data
 @using WeatherApp.Common.Models
-@using Interfaces.WeatherDataAccessLibrary
+@using WeatherDataAccessLibrary
 @using ChartJs.Blazor.Charts
 @using ChartJs.Blazor.ChartJS.Common.Properties
 @using ChartJs.Blazor.ChartJS.Common.Enums
@@ -13,6 +13,7 @@
 @using ChartJs.Blazor.ChartJS.Common.Time
 @using ChartJs.Blazor.ChartJS.LineChart
 @using ChartJs.Blazor.Util
+@using WeatherDataAccessLibrary.Interfaces
 
 
 @inject ISqlQueries SqlQueries
@@ -25,25 +26,31 @@
     div.dateInput{
         text-align: center;
     }
+    table.table{
+        width: 75% ;
+        text-align: center;
+        margin: 0 auto;
+    }
+    h2.daily{
+        margin: 3% 0 3% 12%;
+        
+    }
 </style>
 
-<h1>Historical weather temperature in Bratislava</h1>
+<h1>Historical weather forecast in Bratislava</h1>
 
-<h3>Get historical data between dates.</h3>
+<h3>Get historical forecast</h3>
 <EditForm Model="@_dateFilter"  OnValidSubmit="@DisplayHistoricalWeatherData">
     <div class="dateInput">
         <label>From date</label>
         <InputDate id="fromDate" @bind-Value="_dateFilter.FromDate" ></InputDate>
         <button type="submit" class="btn btn-success" style="margin-left: 15px">Display</button>
     </div>
-   
-    @* TODO: select with data to display*@
-    
 </EditForm>
 
 @if (_historicalData == null)
 {
-    <p><em>Please select time period of historical data.</em></p>
+    <p><em>Please select date of historical forecast.</em></p>
 }
 else
 {
@@ -58,7 +65,7 @@ else
         <ChartJsLineChart @ref="_lineChartJs" Config="@_configPressure" Width="50" Height="20" />
     </div>
     
-    <h2>Daily observations</h2>
+    <h2 class="daily">Daily observations</h2>
     
     <table class="table">
         <thead>
@@ -77,16 +84,16 @@ else
         @foreach (var data in _historicalData)
         {
             <tr>
-                <td style="vertical-align: middle">@data.Date.ToString("HH:mm")</td>
+                <td style="vertical-align: middle" >@data.Date.ToString("HH:mm")</td>
                 <td style="vertical-align: middle">@Math.Ceiling(data.Temp)&deg</td>
-                @* <td style="vertical-align: middle">@Math.Ceiling(data.FeelsLike)&deg</td> *@
+                <td style="vertical-align: middle">@Math.Ceiling(data.Feels_Like)&deg</td>
                 <td style="vertical-align: middle">@data.Pressure (mmHg)</td>
                 <td style="vertical-align: middle">@data.Humidity%</td>
-                @* <td style="vertical-align: middle"> *@
-                @*     <img src="http://openweathermap.org/img/wn/@data.Icon.Trim()@@2x.png" alt="icon of weather condition" height="50px"> *@
-                @* </td> *@
-                @* <td style="vertical-align: middle">@data.Condition</td> *@
-                @* <td style="vertical-align: middle">@data.Description</td> *@
+                <td style="vertical-align: middle">
+                    <img src="http://openweathermap.org/img/wn/@data.Icon.Trim()@@2x.png" alt="icon of weather condition" height="50px">
+                </td>
+                <td style="vertical-align: middle">@data.Condition</td>
+                <td style="vertical-align: middle">@data.Description</td>
             </tr>
         }
         </tbody>

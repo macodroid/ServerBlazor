@@ -28,28 +28,41 @@ namespace WeatherWorkerService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            int lastHour = DateTime.Now.Hour;
+            
             while (!stoppingToken.IsCancellationRequested)
             {
-                var apiData = GetForecast();
-                
-                var weather = new WeatherModelWorker()
+                if(lastHour < DateTime.Now.Hour || (lastHour == 23 && DateTime.Now.Hour == 0))
                 {
-                    Date = DateTime.Now,
-                    Temp = apiData.main.Temp,
-                    FeelsLike = apiData.main.FeelsLike,
-                    Pressure = apiData.main.Pressure,
-                    Humidity = apiData.main.Humidity,
-                    Condition = apiData.weather[0].main,
-                    Description = apiData.weather[0].description,
-                    Icon = apiData.weather[0].icon
-                    
-                };
-
-                await _restUtils.InsertCurrentWeatherData(weather);
-                
-                _logger.LogInformation(Newtonsoft.Json.JsonConvert.SerializeObject(weather) , DateTimeOffset.Now);
-                await Task.Delay(60*60*1000, stoppingToken); 
+                    lastHour = DateTime.Now.Hour;
+                    await GetCurrentWeatherForecast();
+                }
+                await Task.Delay(1000, stoppingToken); 
             }
         }
+
+        private async Task GetCurrentWeatherForecast()
+        {
+            var apiData = GetForecast();
+                
+            var weather = new WeatherModelWorker()
+            {
+                Date = DateTime.Now,
+                Temp = apiData.main.Temp,
+                FeelsLike = apiData.main.FeelsLike,
+                Pressure = apiData.main.Pressure,
+                Humidity = apiData.main.Humidity,
+                Condition = apiData.weather[0].main,
+                Description = apiData.weather[0].description,
+                Icon = apiData.weather[0].icon
+                    
+            };
+
+            await _restUtils.InsertCurrentWeatherData(weather);
+                
+            _logger.LogInformation(Newtonsoft.Json.JsonConvert.SerializeObject(weather) , DateTimeOffset.Now);
+
+        }
+        
     }
 }

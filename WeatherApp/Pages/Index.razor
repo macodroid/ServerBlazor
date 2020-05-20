@@ -1,10 +1,11 @@
 ﻿@page "/"
 
-@using Interfaces.WeatherDataAccessLibrary
 @using WeatherApp.Common.Models
+@using WeatherDataAccessLibrary.Interfaces
 
 @inject ISqlDataAccess SqlDataAccess;
 @inject ISqlQueries SqlQueries;
+@inject IDatabaseNotifications DatabaseNotifications;
 
 
 <h1>Weather Forecast for Bratislava</h1>
@@ -33,7 +34,7 @@ else
             <tr>
                 <td style="vertical-align: middle">@data.Date.ToString("HH:mm")</td>
                 <td style="vertical-align: middle">@Math.Ceiling(data.Temp)&deg</td>
-                <td style="vertical-align: middle">@Math.Ceiling(data.FeelsLike)&deg</td>
+                <td style="vertical-align: middle">@Math.Ceiling(data.Feels_Like)&deg</td>
                 <td style="vertical-align: middle">@data.Pressure (mmHg)</td>
                 <td style="vertical-align: middle">@data.Humidity%</td>
                 <td style="vertical-align: middle">
@@ -58,11 +59,11 @@ else
     protected override async Task OnInitializedAsync()
     {
         _weatherData = await SqlQueries.GetTodayWeather();
-        SqlDataAccess.ReceiveNotify();
-        SqlDataAccess.OnWeatherChange += SqlDataAccessOnOnWeatherChange;
+        DatabaseNotifications.ReceiveNotifyCurrentWeather();
+        DatabaseNotifications.OnWeatherChange += SqlDataAccessOnWeatherChange;
     }
 
-    private async void SqlDataAccessOnOnWeatherChange(object? sender, WeatherModel e)
+    private async void SqlDataAccessOnWeatherChange(object? sender, WeatherModel e)
     {
         _weatherData.Add(e);
         

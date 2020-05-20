@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WeatherApp.DataAccessLibrary\WeatherApp.DataAccessLibrary.csproj" />
+    <ProjectReference Include="..\WeatherForecast\WeatherForecast.csproj" />
     <ProjectReference Include="..\WeatherWorkerService\WeatherWorkerService.csproj" />
   </ItemGroup>
 

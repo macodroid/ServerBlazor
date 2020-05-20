@@ -1,2 +1,23 @@
 @page "/forecast"
+@using WeatherDataAccessLibrary
+@using WeatherApp.Common.Models
+@using WeatherDataAccessLibrary.Interfaces
 
+@inject ISqlDataAccess SqlDataAccess;
+@inject ISqlQueries SqlQueries;
+@inject IDatabaseNotifications DatabaseNotifications;
+
+@code{
+
+
+    protected override void OnInitialized()
+    {
+        DatabaseNotifications.ReceiveNotifyCurrentWeather();
+        DatabaseNotifications.OnForecastChange += SqlDataAccessOnForecastChange;
+    }
+
+    private void SqlDataAccessOnForecastChange(object? sender, ForecastResponseModel e)
+    {
+        throw new NotImplementedException();
+    }
+}

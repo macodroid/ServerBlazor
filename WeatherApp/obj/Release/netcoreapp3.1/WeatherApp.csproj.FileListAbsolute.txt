@@ -42,7 +42,6 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/Newtonsoft.Json.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/Npgsql.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/RestSharp.dll
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/System.Security.AccessControl.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/System.Security.Principal.Windows.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll
@@ -61,9 +60,7 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.MvcApplicationPartsAssemblyInfo.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.RazorComponent.input.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/App.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/Counter.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/Error.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/FetchData.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/Forecast.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/Index.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Shared/MainLayout.razor.g.cs
@@ -75,9 +72,7 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.TagHelpers.output.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.RazorCoreGenerate.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/App.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/Counter.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/Error.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/FetchData.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/Forecast.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/Index.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Shared/MainLayout.razor.g.cs
@@ -100,3 +95,5 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.genruntimeconfig.cache
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/HistoricalTemperature.razor.g.cs
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/HistoricalTemperature.razor.g.cs
+/home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/WeatherForecast.dll
+/home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Release/netcoreapp3.1/WeatherForecast.pdb

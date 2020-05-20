@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Interfaces.WeatherDataAccessLibrary;
 using WeatherApp.Common.Models;
+using WeatherDataAccessLibrary.Interfaces;
 
 namespace WeatherDataAccessLibrary
 {
@@ -10,6 +10,7 @@ namespace WeatherDataAccessLibrary
     {
         private const string _schema = "ba_weather";
         private const string _table = "test";
+        private const string _tableForecst = "random_forest";
         private const string _dateFormat = "yyyy-MM-dd";
         
         private readonly ISqlDataAccess _dataAccess;
@@ -46,15 +47,14 @@ namespace WeatherDataAccessLibrary
         
         // TODO: Create query for Inserting to Database
         
-        // public Task InsertCurrentWeatherData(WeatherModel weatherModel)
-        // {
-        //     var sql =
-        //         $"INSERT INTO {_schema}.{_table} (date, temp, pressure, humidity)" +
-        //         $" values ('{weatherModel.Date}',{weatherModel.Temp},{weatherModel.Pressure}," +
-        //         $"{weatherModel.Humidity})";
-        //
-        //     return _dataAccess.SaveData(sql, weatherModel);
-        // }
+        public Task InsertPredictedWeatherTemperature(ForecastResponseModel forecastResponseModel )
+        {
+            var sql =
+                $"INSERT INTO {_schema}.{_tableForecst} (date, temp)" +
+                $" values ('{forecastResponseModel.Date.ToString("yyyy-MM-dd HH:mm:ss")}',{forecastResponseModel.Temp})";
+        
+            return _dataAccess.SaveData(sql, forecastResponseModel);
+        }
         
     }
 }

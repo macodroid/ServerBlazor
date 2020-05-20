@@ -81,7 +81,6 @@ C:/Users/macko/Documents/Project/BlazorServer/WeatherApp/bin/Debug/netcoreapp3.1
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/Npgsql.dll
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/WeatherApp.Common.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/WeatherApp.DataAccessLibrary.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/bin/Debug/netcoreapp3.1/WeatherApp.DataAccessLibrary.pdb
