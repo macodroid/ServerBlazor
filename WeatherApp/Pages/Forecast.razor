@@ -28,7 +28,9 @@ else
             <tr>
                 <td style="vertical-align: middle">@data.Date.ToString("HH:mm")</td>
                 <td style="vertical-align: middle">@data.Temp&deg</td>
-                <td style="vertical-align: middle">@Math.Floor(data.Actual)&deg</td>
+                @data.Actual != 0 
+                ? <td style="vertical-align: middle">@Math.Floor(data.Actual)&deg</td>
+                : <td style="vertical-align: middle"></td>
             </tr>
         }
         </tbody>

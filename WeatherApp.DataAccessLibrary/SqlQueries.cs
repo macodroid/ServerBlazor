@@ -71,8 +71,8 @@ namespace WeatherDataAccessLibrary
         public Task InsertPredictedWeatherTemperature(ForecastResponseModel forecastResponseModel )
         {
             var sql =
-                $"INSERT INTO {_schema}.{_tableForecst} (date, temp)" +
-                $" values ('{forecastResponseModel.Date.ToString("yyyy-MM-dd HH:mm:ss")}',{forecastResponseModel.Temp})";
+                $"INSERT INTO {_schema}.{_tableForecst} (date, temp, actual)" +
+                $" values ('{forecastResponseModel.Date.ToString("yyyy-MM-dd HH:mm:ss")}',{forecastResponseModel.Temp}, {forecastResponseModel.Actual})";
         
             return _dataAccess.SaveData(sql, forecastResponseModel);
         }
