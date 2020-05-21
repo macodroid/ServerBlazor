@@ -33,7 +33,7 @@ namespace WeatherDataAccessLibrary
                 return data.ToList();
             }
         }
-        
+
         public async Task SaveData<T>(string sql, T parameters)
         {
             var connectionString = _config.GetConnectionString(ConnectionStringName);

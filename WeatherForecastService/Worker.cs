@@ -25,15 +25,13 @@ namespace WeatherForecastService
             
             while (!stoppingToken.IsCancellationRequested)
             {
-                forecast.ForecastForNexHour();
+               
                 if(lastHour < DateTime.Now.Hour || (lastHour == 23 && DateTime.Now.Hour == 0))
                 {
                     lastHour = DateTime.Now.Hour;
                     
-                    
-                    
-                   
-                    
+                    forecast.ForecastForNexHour();
+
                 }
                 await Task.Delay(5000, stoppingToken); 
             }

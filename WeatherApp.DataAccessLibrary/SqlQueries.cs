@@ -19,7 +19,9 @@ namespace WeatherDataAccessLibrary
         {
             _dataAccess = dataAccess;
         }
-        
+
+        #region Get data from database
+
         public Task<List<WeatherModel>> GetAllWeatherData()
         {
             string sqlQuery = $"select * from {_schema}.{_table}";
@@ -35,6 +37,14 @@ namespace WeatherDataAccessLibrary
             return _dataAccess.LoadData<WeatherModel, dynamic>(sqlQuery, new{ });
         }
         
+        public Task<List<ForecastResponseModel>> GetTodayForecast()
+        {
+            var today = DateTime.Today;
+            var sqlQuery = $"select * from {_schema}.{_tableForecst} where date between \'{today.ToString(_dateFormat)}\' and  \'{today.AddDays(1).ToString(_dateFormat)}\'";
+
+            return _dataAccess.LoadData<ForecastResponseModel, dynamic>(sqlQuery, new{ });
+        }
+        
         public Task<List<WeatherModel>> GetHistoricalWeatherDataByDate(DateTime fromDate)
         {
             var toDate = fromDate.AddDays(1);
@@ -44,9 +54,20 @@ namespace WeatherDataAccessLibrary
 
             return _dataAccess.LoadData<WeatherModel, dynamic>(sqlQuery, new{ });
         }
+
+        public Task<List<double>> GetActualWeatherTemperature(DateTime date)
+        {
+            var toDate = date.AddHours(-1);
+            var fromDateFormat = toDate.ToString(_dateFormat);
+            var sqlQuery = $"select temp from {_schema}.{_table} where date = \'{fromDateFormat}\'";
+
+            return _dataAccess.LoadData<double , dynamic>(sqlQuery, new{ });
+        }
         
-        // TODO: Create query for Inserting to Database
-        
+        #endregion
+
+
+        #region Insert data into database
         public Task InsertPredictedWeatherTemperature(ForecastResponseModel forecastResponseModel )
         {
             var sql =
@@ -55,6 +76,23 @@ namespace WeatherDataAccessLibrary
         
             return _dataAccess.SaveData(sql, forecastResponseModel);
         }
+        
+        #endregion
+
+        #region Update database
+
+        public Task UpdatePredictedWeatherTemperature(ForecastResponseModel forecastResponseModel)
+        {
+            var sql =
+                $"INSERT INTO {_schema}.{_tableForecst}" +
+                $" set actual {forecastResponseModel.Actual} where date = {forecastResponseModel.Date.ToString("yyyy-MM-dd HH:mm:ss")}')";
+        
+            return _dataAccess.SaveData(sql, forecastResponseModel);
+        }
+
+        #endregion
+        
+        
         
     }
 }

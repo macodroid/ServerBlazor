@@ -65,11 +65,21 @@ else
 
     private async void SqlDataAccessOnWeatherChange(object? sender, WeatherModel e)
     {
+        CheckIfSameDay(e.Date);
         _weatherData.Add(e);
         
         await InvokeAsync(() =>
         {
             base.StateHasChanged();
         });
+    }
+    
+    private void CheckIfSameDay(DateTime date)
+    {
+        var lastItem = _weatherData.LastOrDefault();
+        if (lastItem != null && lastItem.Date.Day != date.Day)
+        {
+            _weatherData = new List<WeatherModel>();
+        }
     }
 }

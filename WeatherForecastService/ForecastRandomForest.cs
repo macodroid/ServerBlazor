@@ -39,7 +39,8 @@ namespace WeatherForecastService
             var predictedTemperature = new ForecastResponseModel
             {
                 Date = dateNow,
-                Temp = temperature
+                Temp = temperature,
+                Actual = 0.0
             };
 
             await _sqlQueries.InsertPredictedWeatherTemperature(predictedTemperature);
