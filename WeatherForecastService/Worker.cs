@@ -20,7 +20,7 @@ namespace WeatherForecastService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var forecast = new ForecastRandomForest(_config);
+            var forecast = new ForecastRandomForest(_config,_logger);
             var lastHour = DateTime.Now.Hour;
             
             while (!stoppingToken.IsCancellationRequested)
@@ -31,7 +31,6 @@ namespace WeatherForecastService
                     lastHour = DateTime.Now.Hour;
                     
                     forecast.ForecastForNexHour();
-
                 }
                 await Task.Delay(5000, stoppingToken); 
             }

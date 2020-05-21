@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using RestSharp;
 using WeatherApp.Common.Models;
 using WeatherDataAccessLibrary;
@@ -16,13 +17,14 @@ namespace WeatherForecastService
         private readonly IConfiguration _config;
         private ISqlQueries _sqlQueries;
         private ISqlDataAccess _sqlDataAccess;
+        private readonly ILogger<Worker> _logger;
         
        
         
-        public ForecastRandomForest(IConfiguration config)
+        public ForecastRandomForest(IConfiguration config, ILogger<Worker> logger)
         {
-            
             _config = config;
+            _logger = logger;
         }
 
         public async Task ForecastForNexHour()
@@ -42,7 +44,7 @@ namespace WeatherForecastService
                 Temp = temperature,
                 Actual = 0.0
             };
-
+            _logger.LogInformation(Newtonsoft.Json.JsonConvert.SerializeObject(predictedTemperature) , DateTimeOffset.Now);
             await _sqlQueries.InsertPredictedWeatherTemperature(predictedTemperature);
 
         }

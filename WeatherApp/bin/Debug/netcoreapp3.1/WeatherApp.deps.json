@@ -26,7 +26,6 @@
         "dependencies": {
           "ChartJs.Blazor": "1.1.0",
           "WeatherApp.DataAccessLibrary": "1.0.0",
-          "WeatherForecast": "1.0.0",
           "WeatherWorkerService": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -2413,16 +2412,6 @@
           "WindowsBase.dll": {}
         },
         "compileOnly": true
-      },
-      "WeatherForecast/1.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.3",
-          "Newtonsoft.Json": "12.0.3",
-          "RestSharp": "106.10.1",
-          "WeatherApp.Common": "1.0.0",
-          "WeatherApp.DataAccessLibrary": "1.0.0"
-        },
-        "compileOnly": true
       }
     }
   },
@@ -4044,11 +4033,6 @@
     },
     "WindowsBase/4.0.0.0": {
       "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "WeatherForecast/1.0.0": {
-      "type": "project",
       "serviceable": false,
       "sha512": ""
     }

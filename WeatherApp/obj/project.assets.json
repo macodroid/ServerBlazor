@@ -613,23 +613,6 @@
           "bin/placeholder/WeatherApp.DataAccessLibrary.dll": {}
         }
       },
-      "WeatherForecast/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.3",
-          "Newtonsoft.Json": "12.0.3",
-          "RestSharp": "106.10.1",
-          "WeatherApp.Common": "1.0.0",
-          "WeatherApp.DataAccessLibrary": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/WeatherForecast.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/WeatherForecast.dll": {}
-        }
-      },
       "WeatherWorkerService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1634,11 +1617,6 @@
       "path": "../WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj",
       "msbuildProject": "../WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj"
     },
-    "WeatherForecast/1.0.0": {
-      "type": "project",
-      "path": "../WeatherForecast/WeatherForecast.csproj",
-      "msbuildProject": "../WeatherForecast/WeatherForecast.csproj"
-    },
     "WeatherWorkerService/1.0.0": {
       "type": "project",
       "path": "../WeatherWorkerService/WeatherWorkerService.csproj",
@@ -1649,7 +1627,6 @@
     ".NETCoreApp,Version=v3.1": [
       "ChartJs.Blazor >= 1.1.0",
       "WeatherApp.DataAccessLibrary >= 1.0.0",
-      "WeatherForecast >= 1.0.0",
       "WeatherWorkerService >= 1.0.0"
     ]
   },
@@ -1679,9 +1656,6 @@
           "projectReferences": {
             "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj": {
               "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj"
-            },
-            "/home/maco/Documents/Project/ServerBlazor/WeatherForecast/WeatherForecast.csproj": {
-              "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherForecast/WeatherForecast.csproj"
             },
             "/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/WeatherWorkerService.csproj": {
               "projectPath": "/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/WeatherWorkerService.csproj"

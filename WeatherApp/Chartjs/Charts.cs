@@ -19,6 +19,7 @@ namespace WeatherApp.Chartjs
         public static async Task DisplayHistoricalTemperature(List<WeatherModel> listWeatherModels,
             LineConfig configTemp)
         {
+            
             listWeatherModels.RemoveAt(listWeatherModels.Count - 1);
             configTemp = new LineConfig()
             {

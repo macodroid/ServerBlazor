@@ -115,10 +115,13 @@ else
     private async Task DisplayHistoricalWeatherData()
     {
         _historicalData = await SqlQueries.GetHistoricalWeatherDataByDate(_dateFilter.FromDate);
-
-        await Charts.DisplayHistoricalTemperature(_historicalData, configTemp);
-        await Charts.DisplayHistoricalHumidity(_historicalData, configTemp);
-        await Charts.DisplayHistoricalPressure(_historicalData, configTemp);
+        if (_historicalData != null && _historicalData.Count != 0)
+        {
+            await Charts.DisplayHistoricalTemperature(_historicalData, configTemp);
+            await Charts.DisplayHistoricalHumidity(_historicalData, configTemp);
+            await Charts.DisplayHistoricalPressure(_historicalData, configTemp);
+        }
+        
         
     }
 }
