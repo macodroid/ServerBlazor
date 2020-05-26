@@ -20,8 +20,7 @@ namespace WeatherForecastService
                     
                     services.AddHostedService<Worker>();
                     services.AddSingleton(configuration);
- 
-
+                    
                 });
         
     }

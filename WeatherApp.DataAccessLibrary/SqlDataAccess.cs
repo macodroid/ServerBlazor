@@ -44,26 +44,5 @@ namespace WeatherDataAccessLibrary
             }
         }
 
-        // public async void ReceiveNotifyCurrentWeather()
-        // {
-        //     var connectionString = _config.GetConnectionString(ConnectionStringName);
-        //     using (var connection = new NpgsqlConnection(connectionString))
-        //     {
-        //         connection.Open();
-        //         var cmd = new NpgsqlCommand("LISTEN weather_insert", connection).ExecuteNonQuery();
-        //         connection.Notification += async (o, e) =>
-        //         {
-        //             var jsonNotify = JObject.Parse(e.Payload);
-        //             var weatherData = jsonNotify.ToObject<WeatherModel>();
-        //             OnWeatherChange?.Invoke(this, weatherData);
-        //         };
-        //
-        //         while (true)
-        //         {
-        //             await connection.WaitAsync();
-        //         }
-        //     }
-        // }
-        
     }
 }

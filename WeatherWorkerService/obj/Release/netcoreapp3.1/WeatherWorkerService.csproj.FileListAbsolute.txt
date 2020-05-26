@@ -53,3 +53,7 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/obj/Release/netcoreapp3.1/WeatherWorkerService.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/obj/Release/netcoreapp3.1/WeatherWorkerService.pdb
 /home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/obj/Release/netcoreapp3.1/WeatherWorkerService.genruntimeconfig.cache
+/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/bin/Release/netcoreapp3.1/WeatherApp.Common.dll
+/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/bin/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.dll
+/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/bin/Release/netcoreapp3.1/WeatherApp.DataAccessLibrary.pdb
+/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/bin/Release/netcoreapp3.1/WeatherApp.Common.pdb

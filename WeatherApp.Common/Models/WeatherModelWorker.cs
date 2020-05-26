@@ -1,6 +1,6 @@
 using System;
 
-namespace WeatherWorkerService.Models
+namespace WeatherApp.Common.Models
 {
     public class WeatherModelWorker
     {

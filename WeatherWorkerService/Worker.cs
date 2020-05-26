@@ -1,33 +1,25 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using RestSharp;
-using WeatherWorkerService.Models;
 
 namespace WeatherWorkerService
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
-        private const string Url = "http://api.openweathermap.org/data/2.5/weather?id=3060972&appid=a4808f70587d24bd0e138fdad13df1d3&units=metric";
-        private RestUtils _restUtils;
-        public Worker(ILogger<Worker> logger, RestUtils restUtils)
+        private readonly IConfiguration _config;
+        public Worker(ILogger<Worker> logger, IConfiguration config)
         {
             _logger = logger;
-            _restUtils = restUtils;
-        }
-        private RootObject GetForecast()
-        {
-            var client = new RestClient();
-            var request = new RestRequest(Url, Method.GET);
-            var response = client.Execute<RootObject>(request);
-            return response.Data;
+            _config = config;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            var current = new CurrentWeather(_config, _logger);
             int lastHour = DateTime.Now.Hour;
             
             while (!stoppingToken.IsCancellationRequested)
@@ -35,34 +27,13 @@ namespace WeatherWorkerService
                 if(lastHour < DateTime.Now.Hour || (lastHour == 23 && DateTime.Now.Hour == 0))
                 {
                     lastHour = DateTime.Now.Hour;
-                    await GetCurrentWeatherForecast();
+                    current.GetCurrentWeatherForecast();
                 }
-                await Task.Delay(1000, stoppingToken); 
+                await Task.Delay(10000, stoppingToken); 
             }
         }
 
-        private async Task GetCurrentWeatherForecast()
-        {
-            var apiData = GetForecast();
-                
-            var weather = new WeatherModelWorker()
-            {
-                Date = DateTime.Now,
-                Temp = apiData.main.Temp,
-                FeelsLike = apiData.main.FeelsLike,
-                Pressure = apiData.main.Pressure,
-                Humidity = apiData.main.Humidity,
-                Condition = apiData.weather[0].main,
-                Description = apiData.weather[0].description,
-                Icon = apiData.weather[0].icon
-                    
-            };
-
-            await _restUtils.InsertCurrentWeatherData(weather);
-                
-            _logger.LogInformation(Newtonsoft.Json.JsonConvert.SerializeObject(weather) , DateTimeOffset.Now);
-
-        }
+        
         
     }
 }

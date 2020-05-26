@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JFVWrmjjYonplW9+OywuRHxgaoYVdWX1/NpShmnF3phrVUWP4oH4NI2I71QwdN+pHKET/kBUdmf5if87/t0YjQ==",
+  "dgSpecHash": "rleACVjnu9BPdaJ64SiRP3pvCmjXhK8CqdCeaZPnxmWnDeIZca+TAfV4RDVUAaSbI0xv3x/CLLrXBDdHA5F/Hg==",
   "success": true,
   "projectFilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherWorkerService/WeatherWorkerService.csproj",
   "expectedPackageFiles": [

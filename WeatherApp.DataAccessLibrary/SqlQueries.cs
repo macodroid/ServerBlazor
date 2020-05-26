@@ -9,7 +9,7 @@ namespace WeatherDataAccessLibrary
     public class SqlQueries : ISqlQueries
     {
         private const string _schema = "ba_weather";
-        private const string _table = "test";
+        private const string _table = "bratislava_weather";
         private const string _tableForecst = "random_forest";
         private const string _dateFormat = "yyyy-MM-dd";
         
@@ -21,13 +21,6 @@ namespace WeatherDataAccessLibrary
         }
 
         #region Get data from database
-
-        public Task<List<WeatherModel>> GetAllWeatherData()
-        {
-            string sqlQuery = $"select * from {_schema}.{_table}";
-
-            return _dataAccess.LoadData<WeatherModel, dynamic>(sqlQuery, new{ });
-        }
         
         public Task<List<WeatherModel>> GetTodayWeather()
         {
@@ -44,7 +37,7 @@ namespace WeatherDataAccessLibrary
 
             return _dataAccess.LoadData<ForecastResponseModel, dynamic>(sqlQuery, new{ });
         }
-        
+
         public Task<List<WeatherModel>> GetHistoricalWeatherDataByDate(DateTime fromDate)
         {
             var toDate = fromDate.AddDays(1);
@@ -57,13 +50,12 @@ namespace WeatherDataAccessLibrary
 
         public Task<List<double>> GetActualWeatherTemperature(DateTime date)
         {
-            var toDate = date.AddHours(-1);
-            var fromDateFormat = toDate.ToString(_dateFormat);
+            var fromDateFormat = date.ToString(_dateFormat);
             var sqlQuery = $"select temp from {_schema}.{_table} where date = \'{fromDateFormat}\'";
 
             return _dataAccess.LoadData<double , dynamic>(sqlQuery, new{ });
         }
-        
+
         #endregion
 
 
@@ -71,28 +63,25 @@ namespace WeatherDataAccessLibrary
         public Task InsertPredictedWeatherTemperature(ForecastResponseModel forecastResponseModel )
         {
             var sql =
-                $"INSERT INTO {_schema}.{_tableForecst} (date, temp, actual)" +
-                $" values ('{forecastResponseModel.Date.ToString("yyyy-MM-dd HH:mm:ss")}',{forecastResponseModel.Temp}, {forecastResponseModel.Actual})";
+                $"INSERT INTO {_schema}.{_tableForecst} (date, temp)" +
+                $" values ('{forecastResponseModel.Date.ToString("yyyy-MM-dd HH:mm:ss")}',{forecastResponseModel.Temp})";
         
             return _dataAccess.SaveData(sql, forecastResponseModel);
         }
         
-        #endregion
-
-        #region Update database
-
-        public Task UpdatePredictedWeatherTemperature(ForecastResponseModel forecastResponseModel)
+        public Task InsertCurrentWeatherData(WeatherModelWorker weatherModel)
         {
+            var date = weatherModel.Date;
+            var newDate = new DateTime(date.Year,date.Month,date.Day,date.Hour,0,0);
             var sql =
-                $"INSERT INTO {_schema}.{_tableForecst}" +
-                $" set actual {forecastResponseModel.Actual} where date = {forecastResponseModel.Date.ToString("yyyy-MM-dd HH:mm:ss")}')";
-        
-            return _dataAccess.SaveData(sql, forecastResponseModel);
-        }
+                $"INSERT INTO {_schema}.{_table} (date, temp, pressure, humidity, condition,icon,feels_like,description)" +
+                $" values ('{newDate.ToString("yyyy-MM-dd HH:mm:ss")}',{weatherModel.Temp},{weatherModel.Pressure}" +
+                $" ,{weatherModel.Humidity},'{weatherModel.Condition}','{weatherModel.Icon}',{weatherModel.FeelsLike},'{weatherModel.Description}')";
 
+            return _dataAccess.SaveData(sql, weatherModel);
+        }
+        
         #endregion
-        
-        
-        
+
     }
 }

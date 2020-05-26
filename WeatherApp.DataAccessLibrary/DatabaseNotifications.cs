@@ -30,7 +30,7 @@ namespace WeatherDataAccessLibrary
                 connection.Notification += async (o, e) =>
                 {
                     var jsonNotify = JObject.Parse(e.Payload);
-                    if (jsonNotify.Count == 4)
+                    if (jsonNotify.Count == 3)
                     {
                         var forecastData = jsonNotify.ToObject<ForecastResponseModel>();
                         OnForecastChange?.Invoke(this, forecastData);

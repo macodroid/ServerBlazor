@@ -862,7 +862,8 @@
           "Microsoft.Extensions.Hosting": "3.1.3",
           "Newtonsoft.Json": "12.0.3",
           "Npgsql": "4.1.3.1",
-          "RestSharp": "106.10.1"
+          "RestSharp": "106.10.1",
+          "WeatherApp.DataAccessLibrary": "1.0.0"
         },
         "runtime": {
           "WeatherWorkerService.dll": {}
