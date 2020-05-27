@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -41,8 +42,8 @@ namespace WeatherWorkerService
                 FeelsLike = apiData.main.FeelsLike,
                 Pressure = apiData.main.Pressure,
                 Humidity = apiData.main.Humidity,
-                Condition = apiData.weather[0].main,
-                Description = apiData.weather[0].description,
+                Condition = TranslateMain(apiData.weather[0].main),
+                Description = TranslateDesctiption(apiData.weather[0].description),
                 Icon = apiData.weather[0].icon
                     
             };
@@ -50,7 +51,6 @@ namespace WeatherWorkerService
             await _sqlQueries.InsertCurrentWeatherData(weather);
                 
             _logger.LogInformation(Newtonsoft.Json.JsonConvert.SerializeObject(weather) , DateTimeOffset.Now);
-
         }
         
         private RootObject GetForecast()
@@ -59,6 +59,36 @@ namespace WeatherWorkerService
             var request = new RestRequest(ApiUrl, Method.GET);
             var response = client.Execute<RootObject>(request);
             return response.Data;
+        }
+
+        private string TranslateMain(string mainWeather)
+        {
+            var translate = new TranslationWeather();
+            string weatherSlovak;
+            
+            if (translate.mainWeather.TryGetValue(mainWeather, out weatherSlovak))
+            {
+                return weatherSlovak;
+            }
+            else
+            {
+                return mainWeather;
+            }
+        }
+        
+        private string TranslateDesctiption(string descriptionWeather)
+        {
+            var translate = new TranslationWeather();
+            string weatherSlovak;
+            
+            if (translate.descriptionWeather.TryGetValue(descriptionWeather, out weatherSlovak))
+            {
+                return weatherSlovak;
+            }
+            else
+            {
+                return descriptionWeather;
+            }
         }
 
     }

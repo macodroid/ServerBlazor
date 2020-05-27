@@ -8,24 +8,24 @@
 @inject IDatabaseNotifications DatabaseNotifications;
 
 
-<h1>Weather Forecast for Bratislava</h1>
+<h1>Predpoveď počasia pre mesto Bratislava</h1>
 @if (_weatherData == null) 
 {
-    <h4>Loading...</h4>
+    <h4>Načitávanie...</h4>
 }
 else
 {
     <table class="table">
         <thead>
         <tr>
-            <th>Date</th>
-            <th>Temperature</th>
-            <th>Feels like</th>
-            <th>Pressure</th>
-            <th>Humidity</th>
-            <th>Icon</th>
-            <th>Condition</th>
-            <th>Description</th>
+            <th>Čas</th>
+            <th>Teplota</th>
+            <th>Pocitová teplota</th>
+            <th>Tlak</th>
+            <th>Vlhkosť</th>
+            <th>Ikona</th>
+            <th>Podmienky</th>
+            <th>Popis</th>
         </tr>
         </thead>
         <tbody>
@@ -50,10 +50,8 @@ else
 }
 
 
-
 @code
 {
-
     private List<WeatherModel> _weatherData;
 
     protected override async Task OnInitializedAsync()

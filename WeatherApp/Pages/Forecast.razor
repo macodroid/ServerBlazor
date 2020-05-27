@@ -28,7 +28,7 @@
             margin: 0 auto;
         }
 </style>
-<h3>Bratislava, Bratislava Region, Slovakia Hourly Weather Temperature Prediction</h3>
+<h3>Bratislava, Bratislava Region, Hodinové predpovede teploty</h3>
 
 @if (_forecastData == null) 
 {
@@ -42,8 +42,8 @@ else
     <table class="table  table-striped">
         <thead>
         <tr>
-            <th scope="col">Time</th>
-            <th scope="col">Temperature [&degC]</th>
+            <th scope="col">Čas</th>
+            <th scope="col">Teplota [&degC]</th>
         </tr>
         </thead>
         <tbody>
@@ -67,7 +67,16 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _forecastData = await SqlQueries.GetTodayForecast();
+        _forecastData = new List<ForecastResponseModel>();
+        try
+        {
+            _forecastData = await SqlQueries.GetTodayForecast();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
         if (_forecastData != null && _forecastData.Count != 0)
         {
             await DisplayPredictedTemperature(_forecastData);

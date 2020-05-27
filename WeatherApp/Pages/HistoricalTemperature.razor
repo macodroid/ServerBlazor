@@ -35,14 +35,13 @@
     }
 </style>
 
-<h1>Historical weather forecast in Bratislava</h1>
+<h1>Historické údaje o počasí v meste Bratislava</h1>
 
-<h3>Get historical forecast</h3>
 <EditForm Model="@_dateFilter"  OnValidSubmit="@DisplayHistoricalWeatherData">
     <div class="dateInput">
-        <label>From date</label>
+        <label>Dátum</label>
         <InputDate id="fromDate" @bind-Value="_dateFilter.FromDate" ></InputDate>
-        <button type="submit" class="btn btn-success" style="margin-left: 15px">Display</button>
+        <button type="submit" class="btn btn-success" style="margin-left: 15px">Zobraz</button>
     </div>
 </EditForm>
 
@@ -53,11 +52,12 @@
 
 @if (_historicalData == null)
 {
-    <p><em>Please select date of historical forecast.</em></p>
+    <p><em>Zvoľte dátum pre historické udaje</em></p>
 }
 else
 {
-    <h3>Historical Weather Data</h3>
+    <h3>Historické údaje o počasí</h3>
+    
     <div class="line_chart"> 
         <ChartJsLineChart @ref="_lineChartJs" Config="@configTemp" Width="50" Height="20" />
     </div>
@@ -73,14 +73,14 @@ else
     <table class="table">
         <thead>
         <tr>
-            <th>Date</th>
-            <th>Temperature</th>
-            <th>Feels like</th>
-            <th>Pressure</th>
-            <th>Humidity</th>
-            <th>Icon</th>
-            <th>Condition</th>
-            <th>Description</th>
+            <th>Čas</th>
+            <th>Teplota</th>
+            <th>Pocitová teplota</th>
+            <th>Tlak</th>
+            <th>Vlhkosť</th>
+            <th>Ikona</th>
+            <th>Podmienky</th>
+            <th>Popis</th>
         </tr>
         </thead>
         <tbody>
@@ -122,7 +122,7 @@ else
         }
         catch (Exception e)
         {
-            error = "There is no historical data for that day. Please select another day";
+            error = "Neboli nájdené žiadne údaje";
             throw ;
         }
         
@@ -145,11 +145,11 @@ else
                 Title = new OptionsTitle
                 {
                     Display = true,
-                    Text = $"Historical Weather Data for {listWeatherModels[0].Date.ToString("yyyy-MM-dd")} "
+                    Text = $"Historické údaje pre {listWeatherModels[0].Date.ToString("yyyy-MM-dd")} "
                 },
                 Legend = new Legend
                 {
-                    Display = true
+                    Display = true,
                 },
                 Tooltips = new Tooltips
                 {
@@ -164,7 +164,7 @@ else
                         {
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Temperature"
+                                LabelString = "Teplota",
                             }
                         },
                     },
@@ -186,7 +186,7 @@ else
                             },
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Time"
+                                LabelString = "Čas"
                             }
                         }
                     }
@@ -198,7 +198,7 @@ else
         {
             BackgroundColor = ColorUtil.FromDrawingColor(System.Drawing.Color.White),
             BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.Red),
-            Label = "Temperature",
+            Label = "Teplota",
             Fill = false,
             BorderWidth = 2,
             PointRadius = 2,
@@ -242,7 +242,7 @@ else
                         {
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Humidity %"
+                                LabelString = "Vlhkosť [%]"
                             }
                         }
                     },
@@ -264,7 +264,7 @@ else
                             },
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Time"
+                                LabelString = "Čas"
                             }
                         }
                     }
@@ -276,7 +276,7 @@ else
         {
             BackgroundColor = ColorUtil.FromDrawingColor(System.Drawing.Color.White),
             BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.Blue),
-            Label = "Humidity",
+            Label = "Vlhkosť",
             Fill = false,
             BorderWidth = 2,
             PointRadius = 2,
@@ -320,7 +320,7 @@ else
                         {
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Pressure mmHg"
+                                LabelString = "Tlak [mmHg]"
                             }
                         }
                     },
@@ -342,7 +342,7 @@ else
                             },
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Time"
+                                LabelString = "Čas"
                             }
                         }
                     }
@@ -354,7 +354,7 @@ else
         {
             BackgroundColor = ColorUtil.FromDrawingColor(System.Drawing.Color.White),
             BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.Blue),
-            Label = "Pressure",
+            Label = "Tlak",
             Fill = false,
             BorderWidth = 2,
             PointRadius = 2,

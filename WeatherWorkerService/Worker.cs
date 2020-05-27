@@ -32,8 +32,5 @@ namespace WeatherWorkerService
                 await Task.Delay(10000, stoppingToken); 
             }
         }
-
-        
-        
     }
 }
