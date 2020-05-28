@@ -32,7 +32,7 @@
 
 @if (_forecastData == null) 
 {
-    <h4>Loading...</h4>
+    <h4>Načitávanie...</h4>
 }
 else
 {
@@ -67,19 +67,14 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _forecastData = new List<ForecastResponseModel>();
-        try
-        {
-            _forecastData = await SqlQueries.GetTodayForecast();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+        //_forecastData = new List<ForecastResponseModel>();
+
+        _forecastData = await SqlQueries.GetTodayForecast();
+        
+        
         if (_forecastData != null && _forecastData.Count != 0)
         {
-            await DisplayPredictedTemperature(_forecastData);
+            DisplayPredictedTemperature(_forecastData);
         }
         DatabaseNotifications.ReceiveNotifyCurrentWeather();
         DatabaseNotifications.OnForecastChange += SqlDataAccessOnForecastChange;
@@ -108,9 +103,8 @@ else
     }
     
     
-    private async Task DisplayPredictedTemperature(List<ForecastResponseModel> listForecastModels)
+    private void DisplayPredictedTemperature(List<ForecastResponseModel> listForecastModels)
     {
-        listForecastModels.RemoveAt(listForecastModels.Count - 1);
         configTemp = new LineConfig()
         {
             Options = new LineOptions()
@@ -119,7 +113,7 @@ else
                 Title = new OptionsTitle
                 {
                     Display = true,
-                    Text = $"Weather Temperature Forecast for {listForecastModels[0].Date.ToString("yyyy-MM-dd")} "
+                    Text = $"Prepoveď teploty pre {listForecastModels[0].Date.ToString("yyyy-MM-dd")} "
                 },
                 Legend = new Legend
                 {

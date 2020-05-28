@@ -29,7 +29,7 @@ namespace WeatherForecastService
                 if(lastHour < DateTime.Now.Hour || (lastHour == 23 && DateTime.Now.Hour == 0))
                 {
                     lastHour = DateTime.Now.Hour;
-                    await forecast.ForecastForNexHour();
+                    forecast.ForecastForNexHour();
                     
                 }
                 await Task.Delay(10000, stoppingToken); 

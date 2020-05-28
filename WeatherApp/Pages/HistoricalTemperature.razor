@@ -41,7 +41,7 @@
     <div class="dateInput">
         <label>Dátum</label>
         <InputDate id="fromDate" @bind-Value="_dateFilter.FromDate" ></InputDate>
-        <button type="submit" class="btn btn-success" style="margin-left: 15px">Zobraz</button>
+        <button type="submit" class="btn btn-success" style="margin-left: 15px" >Zobraz</button>
     </div>
 </EditForm>
 
@@ -57,17 +57,10 @@
 else
 {
     <h3>Historické údaje o počasí</h3>
-    
     <div class="line_chart"> 
         <ChartJsLineChart @ref="_lineChartJs" Config="@configTemp" Width="50" Height="20" />
     </div>
-    <div class="line_chart"> 
-        <ChartJsLineChart @ref="_lineChartJs" Config="@configHumidity" Width="50" Height="20" />
-    </div>
-    <div class="line_chart"> 
-        <ChartJsLineChart @ref="_lineChartJs" Config="@configPressure" Width="50" Height="20" />
-    </div>
-    
+
     <h2 class="daily">Daily observations</h2>
     
     <table class="table">
@@ -110,9 +103,10 @@ else
     private LineConfig configTemp;
     private LineConfig configHumidity;
     private LineConfig configPressure;
-    private ChartJsLineChart _lineChartJs;
+    ChartJsLineChart _lineChartJs;
     private string error = "";
-
+    
+    
 
     private async Task DisplayHistoricalWeatherData()
     {
@@ -125,18 +119,24 @@ else
             error = "Neboli nájdené žiadne údaje";
             throw ;
         }
-        
+
         if (_historicalData != null && _historicalData.Count != 0)
         {
-            DisplayHistoricalTemperature(_historicalData);
-            DisplayHistoricalHumidity(_historicalData);
-            DisplayHistoricalPressure(_historicalData);
+             await DisplayHistoricalTemperature(_historicalData);
+            await DisplayHistoricalHumidity(_historicalData);
+            await DisplayHistoricalPressure(_historicalData);
         }
+        _lineChartJs = new ChartJsLineChart();
+        
     }
-    
-    private void DisplayHistoricalTemperature(List<WeatherModel> listWeatherModels)
+
+
+    private async Task DisplayHistoricalTemperature(List<WeatherModel> listWeatherModels)
     {
-        listWeatherModels.RemoveAt(listWeatherModels.Count - 1);
+        if (listWeatherModels.Count > 25)
+        {
+            listWeatherModels.RemoveAt(listWeatherModels.Count - 1);
+        }
         configTemp = new LineConfig()
         {
             Options = new LineOptions()
@@ -213,9 +213,12 @@ else
         configTemp.Data.Datasets.Add(WeatherDataset);
     }
     
-    private void DisplayHistoricalHumidity(List<WeatherModel> listWeatherModels)
+    private async Task DisplayHistoricalHumidity(List<WeatherModel> listWeatherModels)
     {
-        listWeatherModels.RemoveAt(listWeatherModels.Count - 1);
+        if (listWeatherModels.Count > 25)
+        {
+            listWeatherModels.RemoveAt(listWeatherModels.Count - 1);
+        }
         configHumidity = new LineConfig()
         {
             Options = new LineOptions()
@@ -291,9 +294,12 @@ else
         configHumidity.Data.Datasets.Add(WeatherDataset);
     }
 
-    private void DisplayHistoricalPressure(List<WeatherModel> listWeatherModels)
+    private async Task DisplayHistoricalPressure(List<WeatherModel> listWeatherModels)
     {
-        listWeatherModels.RemoveAt(listWeatherModels.Count - 1);
+        if (listWeatherModels.Count > 25)
+        {
+            listWeatherModels.RemoveAt(listWeatherModels.Count - 1);
+        }
         configPressure = new LineConfig()
         {
             Options = new LineOptions()
