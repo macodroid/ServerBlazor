@@ -70,7 +70,8 @@ else
         //_forecastData = new List<ForecastResponseModel>();
 
         _forecastData = await SqlQueries.GetTodayForecast();
-        
+
+        _forecastData = _forecastData.OrderBy(x => x.Date).ToList();
         
         if (_forecastData != null && _forecastData.Count != 0)
         {

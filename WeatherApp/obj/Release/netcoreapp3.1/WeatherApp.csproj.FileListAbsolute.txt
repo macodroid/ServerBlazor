@@ -95,5 +95,3 @@
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.dll
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.pdb
 /home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/WeatherApp.genruntimeconfig.cache
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/RazorDeclaration/Pages/Test.razor.g.cs
-/home/maco/Documents/Project/ServerBlazor/WeatherApp/obj/Release/netcoreapp3.1/Razor/Pages/Test.razor.g.cs

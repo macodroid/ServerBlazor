@@ -19,7 +19,7 @@
 
 <style>
     div.line_chart{
-        width: 1000px;
+        width: 900px;
         margin: 0 auto;
     }
     div.dateInput{
@@ -37,11 +37,13 @@
 
 <h1>Historické údaje o počasí v meste Bratislava</h1>
 
-<EditForm Model="@_dateFilter"  OnValidSubmit="@DisplayHistoricalWeatherData">
+<EditForm Model="@_dateFilter" OnValidSubmit="@DisplayHistoricalWeatherData">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
     <div class="dateInput">
         <label>Dátum</label>
-        <InputDate id="fromDate" @bind-Value="_dateFilter.FromDate" ></InputDate>
-        <button type="submit" class="btn btn-success" style="margin-left: 15px" >Zobraz</button>
+        <InputDate id="fromDate" @bind-Value="_dateFilter.FromDate">Dátum</InputDate>
+        <button type="submit" class="btn btn-success" style="margin-left: 15px">Zobraz</button>
     </div>
 </EditForm>
 
@@ -60,8 +62,14 @@ else
     <div class="line_chart"> 
         <ChartJsLineChart @ref="_lineChartJs" Config="@configTemp" Width="50" Height="20" />
     </div>
+    <div class="line_chart"> 
+        <ChartJsLineChart @ref="_lineChartJs" Config="@configHumidity" Width="50" Height="20" />
+    </div>
+    <div class="line_chart"> 
+        <ChartJsLineChart @ref="_lineChartJs" Config="@configPressure" Width="50" Height="20" />
+    </div>
 
-    <h2 class="daily">Daily observations</h2>
+    <h2 class="daily">Denné pozorovania</h2>
     
     <table class="table">
         <thead>
@@ -106,10 +114,9 @@ else
     ChartJsLineChart _lineChartJs;
     private string error = "";
     
-    
-
     private async Task DisplayHistoricalWeatherData()
     {
+        _historicalData = null;
         try
         {
             _historicalData = await SqlQueries.GetHistoricalWeatherDataByDate(_dateFilter.FromDate);
@@ -122,12 +129,11 @@ else
 
         if (_historicalData != null && _historicalData.Count != 0)
         {
-             await DisplayHistoricalTemperature(_historicalData);
+            await DisplayHistoricalTemperature(_historicalData);
             await DisplayHistoricalHumidity(_historicalData);
             await DisplayHistoricalPressure(_historicalData);
         }
-        _lineChartJs = new ChartJsLineChart();
-        
+
     }
 
 
@@ -373,5 +379,6 @@ else
             (_ => new TimeTuple<int>(new Moment(_.Date), System.Convert.ToInt32(Math.Ceiling(_.Pressure))));
         WeatherDataset.AddRange(chartData);
         configPressure.Data.Datasets.Add(WeatherDataset);
+        
     }
 }
