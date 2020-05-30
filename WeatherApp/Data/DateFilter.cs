@@ -1,13 +1,15 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace WeatherApp.Data
 {
     public class DateFilter
     {
-        
+        [Required]
+        // [DateTimeConstant()]
+        [DateValidator(ErrorMessage = "Join Date can not be greater than current date")]
         public DateTime FromDate { get; set; } = DateTime.Now;
-        public DateTime ToDate { get; set; }
-        public string TypeOfData { get; set; }
+        private string validDate = DateTime.Now.ToString();
     }
 }
