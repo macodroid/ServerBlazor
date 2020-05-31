@@ -64,12 +64,11 @@ else
     List<ForecastResponseModel> _forecastData;
     private LineConfig configTemp;
     private ChartJsLineChart _lineChartJs;
+    private List<WeatherModel> _weatherData;
 
     protected override async Task OnInitializedAsync()
     {
-        //_forecastData = new List<ForecastResponseModel>();
-
-        _forecastData = await SqlQueries.GetTodayForecast();
+        _weatherData = await SqlQueries.GetTodayWeather();
 
         _forecastData = _forecastData.OrderBy(x => x.Date).ToList();
         

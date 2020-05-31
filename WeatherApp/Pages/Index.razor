@@ -7,8 +7,21 @@
 @inject ISqlQueries SqlQueries;
 @inject IDatabaseNotifications DatabaseNotifications;
 
+<style>
+    table.table{
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    h1.actualWeatherH1{
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
 
-<h1>Aktualne počasie pre mesto Bratislava</h1>
+
+<h1 class="actualWeatherH1">Aktualne počasie pre mesto Bratislava</h1>
 @if (_weatherData == null) 
 {
     <h4>Načitávanie...</h4>
