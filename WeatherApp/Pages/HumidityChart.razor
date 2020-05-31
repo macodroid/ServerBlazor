@@ -20,11 +20,11 @@
     LineDataset<TimeTuple<int>> WeatherDataset;
     LineConfig _config;
     ChartJsLineChart _lineChartJs;
-    List<WeatherModel> _pressureList;
+    List<WeatherModel> _humidityList;
 
     protected override async Task OnInitializedAsync()
     {
-        _pressureList = WeatherDataList.WeatherModels;
+        _humidityList = WeatherDataList.WeatherModels;
         _config = new LineConfig
         {
             Options = new LineOptions
@@ -36,6 +36,11 @@
                 },
                 Legend = new Legend
                 {
+                    Labels =
+                    {
+                        BoxWidth = 4,
+                        UsePointStyle = true
+                    },
                     Display = true
                 },
                 Tooltips = new Tooltips
@@ -94,8 +99,8 @@
             Hidden = false
         };
         
-        WeatherDataset.AddRange(_pressureList.Select
-            (_ => new TimeTuple<int>(new Moment(_.Date), System.Convert.ToInt32(Math.Ceiling(_.Pressure)))));
+        WeatherDataset.AddRange(_humidityList.Select
+            (_ => new TimeTuple<int>(new Moment(_.Date), System.Convert.ToInt32(Math.Ceiling(_.Humidity)))));
         _config.Data.Datasets.Add(WeatherDataset);
     }
 

@@ -5,7 +5,6 @@
 @using WeatherApp.Common.Models
 @using WeatherDataAccessLibrary.Interfaces
 
-
 @inject ISqlQueries SqlQueries
 @inject WeatherDataList WeatherDataList
 
@@ -38,11 +37,6 @@
         <button type="submit" class="btn btn-success" style="margin-left: 15px">Zobraz</button>
     </div>
 </EditForm>
-
-@if (error != String.Empty)
-{
-    <h1>@error</h1>
-}
 
 @if (_historicalData == null || _historicalData.Count == 0)
 {
@@ -100,7 +94,6 @@ else
 {
     private List<WeatherModel> _historicalData ;
     private DateFilter _dateFilter = new DateFilter();
-    private string error = "";
 
     private async Task DisplayHistoricalWeatherData()
     {

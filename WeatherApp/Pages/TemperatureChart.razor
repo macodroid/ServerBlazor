@@ -16,15 +16,18 @@
     <ChartJsLineChart @ref="_lineChartJs" Config="@_config" Width="50" Height="20" />
 </div>
 
+
+
 @code{
     LineDataset<TimeTuple<int>> WeatherDataset;
     LineConfig _config;
     ChartJsLineChart _lineChartJs;
-    List<WeatherModel> _humidityList;
-
+    List<WeatherModel> _temperatureList;
+    
     protected override async Task OnInitializedAsync()
     {
-        _humidityList = WeatherDataList.WeatherModels;
+        _temperatureList = WeatherDataList.WeatherModels;
+        
         _config = new LineConfig
         {
             Options = new LineOptions
@@ -32,11 +35,18 @@
                 Responsive = true,
                 Title = new OptionsTitle
                 {
-                    Display = true
+                    
+                    Display = true,
+                    Text = $"Teplota"
                 },
                 Legend = new Legend
                 {
-                    Display = true
+                    Labels =
+                    {
+                        BoxWidth = 4,
+                        UsePointStyle = true
+                    },
+                    Display = true,
                 },
                 Tooltips = new Tooltips
                 {
@@ -51,9 +61,9 @@
                         {
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Vlhkosť [%]"
+                                LabelString = "Teplota",
                             }
-                        }
+                        },
                     },
                     xAxes = new List<CartesianAxis>
                     {
@@ -84,8 +94,8 @@
         WeatherDataset = new LineDataset<TimeTuple<int>>
         {
             BackgroundColor = ColorUtil.FromDrawingColor(System.Drawing.Color.White),
-            BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.Blue),
-            Label = "Vlhkosť",
+            BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.Red),
+            Label = "Teplota",
             Fill = false,
             BorderWidth = 2,
             PointRadius = 2,
@@ -94,9 +104,11 @@
             Hidden = false
         };
         
-        WeatherDataset.AddRange(_humidityList.Select
-            (_ => new TimeTuple<int>(new Moment(_.Date), System.Convert.ToInt32(Math.Ceiling(_.Humidity)))));
+        WeatherDataset.AddRange(_temperatureList.Select
+            (_ => new TimeTuple<int>(new Moment(_.Date), System.Convert.ToInt32(Math.Ceiling(_.Temp)))));
         _config.Data.Datasets.Add(WeatherDataset);
+
     }
+
 
 }

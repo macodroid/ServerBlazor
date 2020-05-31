@@ -16,18 +16,15 @@
     <ChartJsLineChart @ref="_lineChartJs" Config="@_config" Width="50" Height="20" />
 </div>
 
-
-
 @code{
     LineDataset<TimeTuple<int>> WeatherDataset;
     LineConfig _config;
     ChartJsLineChart _lineChartJs;
-    List<WeatherModel> _temperatureList;
-    
+    List<WeatherModel> _pressureList;
+
     protected override async Task OnInitializedAsync()
     {
-        _temperatureList = WeatherDataList.WeatherModels;
-        
+        _pressureList = WeatherDataList.WeatherModels;
         _config = new LineConfig
         {
             Options = new LineOptions
@@ -35,12 +32,16 @@
                 Responsive = true,
                 Title = new OptionsTitle
                 {
-                    Display = true,
-                    Text = $"Teplota"
+                    Display = true
                 },
                 Legend = new Legend
                 {
-                    Display = true,
+                    Labels =
+                    {
+                        BoxWidth = 4,
+                        UsePointStyle = true
+                    },
+                    Display = true
                 },
                 Tooltips = new Tooltips
                 {
@@ -55,9 +56,9 @@
                         {
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Teplota",
+                                LabelString = "Vlhkosť [%]"
                             }
-                        },
+                        }
                     },
                     xAxes = new List<CartesianAxis>
                     {
@@ -88,8 +89,8 @@
         WeatherDataset = new LineDataset<TimeTuple<int>>
         {
             BackgroundColor = ColorUtil.FromDrawingColor(System.Drawing.Color.White),
-            BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.Red),
-            Label = "Teplota",
+            BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.Blue),
+            Label = "Vlhkosť",
             Fill = false,
             BorderWidth = 2,
             PointRadius = 2,
@@ -98,11 +99,9 @@
             Hidden = false
         };
         
-        WeatherDataset.AddRange(_temperatureList.Select
-            (_ => new TimeTuple<int>(new Moment(_.Date), System.Convert.ToInt32(Math.Ceiling(_.Temp)))));
+        WeatherDataset.AddRange(_pressureList.Select
+            (_ => new TimeTuple<int>(new Moment(_.Date), System.Convert.ToInt32(Math.Ceiling(_.Pressure)))));
         _config.Data.Datasets.Add(WeatherDataset);
-
     }
-
 
 }

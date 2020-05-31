@@ -23,7 +23,7 @@
         margin: 0 auto;
     }
     table.table{
-            width: 75% ;
+            width: 65%;
             text-align: center;
             margin: 0 auto;
         }
@@ -64,11 +64,10 @@ else
     List<ForecastResponseModel> _forecastData;
     private LineConfig configTemp;
     private ChartJsLineChart _lineChartJs;
-    private List<WeatherModel> _weatherData;
 
     protected override async Task OnInitializedAsync()
     {
-        _weatherData = await SqlQueries.GetTodayWeather();
+        _forecastData = await SqlQueries.GetTodayForecast();
 
         _forecastData = _forecastData.OrderBy(x => x.Date).ToList();
         
@@ -105,9 +104,9 @@ else
     
     private void DisplayPredictedTemperature(List<ForecastResponseModel> listForecastModels)
     {
-        configTemp = new LineConfig()
+        configTemp = new LineConfig
         {
-            Options = new LineOptions()
+            Options = new LineOptions
             {
                 Responsive = true,
                 Title = new OptionsTitle
@@ -117,6 +116,11 @@ else
                 },
                 Legend = new Legend
                 {
+                    Labels =
+                    {
+                        BoxWidth = 4,
+                        UsePointStyle = true
+                    },
                     Display = true
                 },
                 Tooltips = new Tooltips
@@ -132,7 +136,7 @@ else
                         {
                             ScaleLabel = new ScaleLabel
                             {
-                                LabelString = "Temperature "
+                                LabelString = "Teplota"
                             }
                         },
                     },
@@ -168,7 +172,7 @@ else
             BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.Red),
             Label = "Temperature",
             Fill = false,
-            BorderWidth = 2,
+            BorderWidth = 1,
             PointRadius = 2,
             PointBorderWidth = 2,
             SteppedLine = SteppedLine.False,
