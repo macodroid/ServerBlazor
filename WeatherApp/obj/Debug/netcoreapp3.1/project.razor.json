@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\WeatherApp.csproj",
+  "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/WeatherApp.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -11,104 +11,6 @@
   },
   "ProjectWorkspaceState": {
     "TagHelpers": [
-      {
-        "Kind": "Components.Component",
-        "Name": "WeatherApp.App",
-        "AssemblyName": "WeatherApp",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WeatherApp.App"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "WeatherApp.App",
-        "AssemblyName": "WeatherApp",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "WeatherApp.App",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WeatherApp.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "WeatherApp.Pages.Counter",
-        "AssemblyName": "WeatherApp",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WeatherApp.Pages.Counter"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "WeatherApp.Pages.Counter",
-        "AssemblyName": "WeatherApp",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "WeatherApp.Pages.Counter",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WeatherApp.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
       {
         "Kind": "Components.Component",
         "Name": "WeatherApp.Pages.Error",
@@ -160,14 +62,14 @@
       },
       {
         "Kind": "Components.Component",
-        "Name": "WeatherApp.Pages.FetchData",
+        "Name": "WeatherApp.Pages.Forecast",
         "AssemblyName": "WeatherApp",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "FetchData",
+            "TagName": "Forecast",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -179,19 +81,19 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WeatherApp.Pages.FetchData"
+          "Common.TypeName": "WeatherApp.Pages.Forecast"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "WeatherApp.Pages.FetchData",
+        "Name": "WeatherApp.Pages.Forecast",
         "AssemblyName": "WeatherApp",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "WeatherApp.Pages.FetchData",
+            "TagName": "WeatherApp.Pages.Forecast",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -203,56 +105,7 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WeatherApp.Pages.FetchData",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "WeatherApp.Pages.HistoricalWeather",
-        "AssemblyName": "WeatherApp",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "HistoricalWeather",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WeatherApp.Pages.HistoricalWeather"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "WeatherApp.Pages.HistoricalWeather",
-        "AssemblyName": "WeatherApp",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "WeatherApp.Pages.HistoricalWeather",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "WeatherApp.Pages.HistoricalWeather",
+          "Common.TypeName": "WeatherApp.Pages.Forecast",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -302,6 +155,55 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "WeatherApp.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "WeatherApp.Pages.HistoricalTemperature",
+        "AssemblyName": "WeatherApp",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "HistoricalTemperature",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WeatherApp.Pages.HistoricalTemperature"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "WeatherApp.Pages.HistoricalTemperature",
+        "AssemblyName": "WeatherApp",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "WeatherApp.Pages.HistoricalTemperature",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WeatherApp.Pages.HistoricalTemperature",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -562,6 +464,55 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "WeatherApp.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "WeatherApp.App",
+        "AssemblyName": "WeatherApp",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WeatherApp.App"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "WeatherApp.App",
+        "AssemblyName": "WeatherApp",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "WeatherApp.App",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "WeatherApp.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -22238,58 +22189,53 @@
   "RootNamespace": "WeatherApp",
   "Documents": [
     {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\_Imports.razor",
-      "TargetPath": "_Imports.razor",
-      "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Pages\\Index.razor",
-      "TargetPath": "Pages\\Index.razor",
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/Pages/HistoricalTemperature.razor",
+      "TargetPath": "Pages\\HistoricalTemperature.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Pages\\Error.razor",
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/Pages/Error.razor",
       "TargetPath": "Pages\\Error.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/Pages/Forecast.razor",
+      "TargetPath": "Pages\\Forecast.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Pages\\_Host.cshtml",
-      "TargetPath": "Pages\\_Host.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\App.razor",
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/App.razor",
       "TargetPath": "App.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Pages\\HistoricalWeather.razor",
-      "TargetPath": "Pages\\HistoricalWeather.razor",
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/Pages/_Host.cshtml",
+      "TargetPath": "Pages\\_Host.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/Shared/NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Project\\ServerBlazor\\WeatherApp\\Pages\\FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/Shared/SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/_Imports.razor",
+      "TargetPath": "_Imports.razor",
+      "FileKind": "componentImport"
+    },
+    {
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/Pages/Index.razor",
+      "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp/Shared/MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
       "FileKind": "component"
     }
   ],

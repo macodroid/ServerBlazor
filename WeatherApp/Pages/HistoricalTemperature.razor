@@ -1,0 +1,106 @@
+﻿@page "/historicalTemperature"
+
+
+@using WeatherApp.Data
+@using WeatherApp.Common.Models
+@using WeatherDataAccessLibrary.Interfaces
+
+@inject ISqlQueries SqlQueries
+@inject WeatherDataList WeatherDataList
+
+<style>
+    div.line_chart{
+        width: 900px;
+        margin: 0 auto;
+    }
+    div.dateInput{
+        text-align: center;
+    }
+    table.table{
+        width: 75% ;
+        text-align: center;
+        margin: 0 auto;
+    }
+    h2.daily{
+        margin: 3% 0 3% 12%;
+    }
+</style>
+
+<h1>Historické údaje o počasí v meste Bratislava</h1>
+
+<EditForm Model="@_dateFilter" OnValidSubmit="@DisplayHistoricalWeatherData">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="dateInput">
+        <label>Dátum</label>
+        <InputDate id="fromDate" @bind-Value="_dateFilter.FromDate">Dátum</InputDate>
+        <button type="submit" class="btn btn-success" style="margin-left: 15px">Zobraz</button>
+    </div>
+</EditForm>
+
+@if (_historicalData == null || _historicalData.Count == 0)
+{
+    <p><em>Zvoľte dátum pre historické udaje</em></p>
+    
+    @if (_historicalData?.Count == 0)
+    {
+        <p><em>Údaje pre zvolený dátum boli najdené</em></p>
+    }
+        
+}
+else
+{
+    <h3>Historické údaje o počasí</h3>
+    <TemperatureChart />
+    <HumidityChart />
+    <PressureChart />
+
+    <h2 class="daily">Denné pozorovania</h2>
+    
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Čas</th>
+            <th>Teplota [&deg]</th>
+            <th>Pocitová teplota [&deg]</th>
+            <th>Tlak [mmHg]</th>
+            <th>Vlhkosť [%]</th>
+            <th>Ikona</th>
+            <th>Podmienky</th>
+            <th>Popis</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var data in _historicalData)
+        {
+            <tr>
+                <td style="vertical-align: middle" >@data.Date.ToString("HH:mm")</td>
+                <td style="vertical-align: middle">@Math.Ceiling(data.Temp)</td>
+                <td style="vertical-align: middle">@Math.Ceiling(data.Feels_Like)</td>
+                <td style="vertical-align: middle">@data.Pressure </td>
+                <td style="vertical-align: middle">@data.Humidity</td>
+                <td style="vertical-align: middle">
+                    <img src="http://openweathermap.org/img/wn/@data.Icon.Trim()@@2x.png" alt="icon of weather condition" height="50px">
+                </td>       
+                <td style="vertical-align: middle">@data.Condition</td>
+                <td style="vertical-align: middle">@data.Description</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code
+{
+    private List<WeatherModel> _historicalData ;
+    private DateFilter _dateFilter = new DateFilter();
+
+    private async Task DisplayHistoricalWeatherData()
+    {
+        _historicalData = null;
+        
+        _historicalData = await SqlQueries.GetHistoricalWeatherDataByDate(_dateFilter.FromDate);
+        
+        WeatherDataList.WeatherModels = _historicalData;
+    }
+}

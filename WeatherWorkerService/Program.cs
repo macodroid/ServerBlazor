@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -15,8 +16,11 @@ namespace WeatherWorkerService
         Host.CreateDefaultBuilder(args)
             .ConfigureServices((hostContext, services) =>
             {
+                IConfiguration configuration = hostContext.Configuration;
+                
                 services.AddHostedService<Worker>();
-                services.AddTransient<RestUtils>();
+                services.AddSingleton(configuration);
+                
             });
 
     }

@@ -1,17 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "J4o+2WPqawX2yJJHvh0j+XgJTUo8x7wmHbsH9lUU9yqipeMLdN8/5cIpfAN54IZj3bmVOM6Xk33VdIa3r0as3A==",
+  "dgSpecHash": "cQpfsCzwY1bc7iXLKWD1d4uRO8pdp8lSgY9cCU1Nc9q5qI8Wtc0fhsYunyzXbdagONd2HdgwXrTQoS5I/BvF9g==",
   "success": true,
   "projectFilePath": "/home/maco/Documents/Project/ServerBlazor/WeatherApp.DataAccessLibrary/WeatherApp.DataAccessLibrary.csproj",
   "expectedPackageFiles": [
     "/home/maco/.nuget/packages/dapper/2.0.35/dapper.2.0.35.nupkg.sha512",
-    "/home/maco/.nuget/packages/microsoft.extensions.configuration.abstractions/5.0.0-preview.3.20215.2/microsoft.extensions.configuration.abstractions.5.0.0-preview.3.20215.2.nupkg.sha512",
-    "/home/maco/.nuget/packages/microsoft.extensions.primitives/5.0.0-preview.3.20215.2/microsoft.extensions.primitives.5.0.0-preview.3.20215.2.nupkg.sha512",
+    "/home/maco/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.3/microsoft.extensions.configuration.abstractions.3.1.3.nupkg.sha512",
+    "/home/maco/.nuget/packages/microsoft.extensions.primitives/3.1.3/microsoft.extensions.primitives.3.1.3.nupkg.sha512",
     "/home/maco/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
     "/home/maco/.nuget/packages/npgsql/4.1.3.1/npgsql.4.1.3.1.nupkg.sha512",
-    "/home/maco/.nuget/packages/system.memory/4.5.2/system.memory.4.5.2.nupkg.sha512",
     "/home/maco/.nuget/packages/system.reflection.emit.lightweight/4.7.0/system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
-    "/home/maco/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0-preview.3.20214.6/system.runtime.compilerservices.unsafe.5.0.0-preview.3.20214.6.nupkg.sha512"
+    "/home/maco/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
   "logs": []
 }

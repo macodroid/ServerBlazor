@@ -1,36 +1,60 @@
 ﻿@page "/"
 
-@using Interfaces.WeatherDataAccessLibrary
 @using WeatherApp.Common.Models
+@using WeatherDataAccessLibrary.Interfaces
 
 @inject ISqlDataAccess SqlDataAccess;
 @inject ISqlQueries SqlQueries;
+@inject IDatabaseNotifications DatabaseNotifications;
+
+<style>
+    table.table{
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    h1.actualWeatherH1{
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
 
 
-<h1>Weather Forecast for Bratislava</h1>
+<h1 class="actualWeatherH1">Aktualne počasie pre mesto Bratislava</h1>
 @if (_weatherData == null) 
 {
-    <h4>Loading...</h4>
+    <h4>Načitávanie...</h4>
 }
 else
 {
     <table class="table">
         <thead>
         <tr>
-            <th>Date</th>
-            <th>Temp</th>
-            <th>Pressure</th>
-            <th>Humidity</th>
+            <th>Čas</th>
+            <th>Teplota</th>
+            <th>Pocitová teplota</th>
+            <th>Tlak</th>
+            <th>Vlhkosť</th>
+            <th>Ikona</th>
+            <th>Podmienky</th>
+            <th>Popis</th>
         </tr>
         </thead>
         <tbody>
         @foreach (var data in _weatherData)
         {
             <tr>
-                <td>@data.Date</td>
-                <td>@data.Temp</td>
-                <td>@data.Pressure</td>
-                <td>@data.Humidity</td>
+                <td style="vertical-align: middle">@data.Date.ToString("HH:mm")</td>
+                <td style="vertical-align: middle">@Math.Ceiling(data.Temp)&deg</td>
+                <td style="vertical-align: middle">@Math.Ceiling(data.Feels_Like)&deg</td>
+                <td style="vertical-align: middle">@data.Pressure (mmHg)</td>
+                <td style="vertical-align: middle">@data.Humidity%</td>
+                <td style="vertical-align: middle">
+                    <img src="http://openweathermap.org/img/wn/@data.Icon.Trim()@@2x.png" alt="icon of weather condition" height="50px">
+                </td>
+                <td style="vertical-align: middle">@data.Condition</td>
+                <td style="vertical-align: middle">@data.Description</td>
             </tr>
         }
         </tbody>
@@ -39,26 +63,34 @@ else
 }
 
 
-
 @code
 {
-
     private List<WeatherModel> _weatherData;
 
     protected override async Task OnInitializedAsync()
     {
         _weatherData = await SqlQueries.GetTodayWeather();
-        SqlDataAccess.ReceiveNotify();
-        SqlDataAccess.OnWeatherChange += SqlDataAccessOnOnWeatherChange;
+        DatabaseNotifications.ReceiveNotifyCurrentWeather();
+        DatabaseNotifications.OnWeatherChange += SqlDataAccessOnWeatherChange;
     }
 
-    private async void SqlDataAccessOnOnWeatherChange(object? sender, WeatherModel e)
+    private async void SqlDataAccessOnWeatherChange(object? sender, WeatherModel e)
     {
+        CheckIfSameDay(e.Date);
         _weatherData.Add(e);
         
         await InvokeAsync(() =>
         {
             base.StateHasChanged();
         });
+    }
+    
+    private void CheckIfSameDay(DateTime date)
+    {
+        var lastItem = _weatherData.LastOrDefault();
+        if (lastItem != null && lastItem.Date.Day != date.Day)
+        {
+            _weatherData = new List<WeatherModel>();
+        }
     }
 }

@@ -7,8 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using Npgsql;
 using WeatherApp.Common.Models;
+using WeatherDataAccessLibrary.Interfaces;
 
-namespace Interfaces.WeatherDataAccessLibrary
+namespace WeatherDataAccessLibrary
 {
     public class SqlDataAccess : ISqlDataAccess
     {
@@ -32,7 +33,7 @@ namespace Interfaces.WeatherDataAccessLibrary
                 return data.ToList();
             }
         }
-        
+
         public async Task SaveData<T>(string sql, T parameters)
         {
             var connectionString = _config.GetConnectionString(ConnectionStringName);
@@ -43,26 +44,5 @@ namespace Interfaces.WeatherDataAccessLibrary
             }
         }
 
-        public async Task<List<WeatherModel>> ReceiveNotify()
-        {
-            var connectionString = _config.GetConnectionString(ConnectionStringName);
-            using (var connection = new NpgsqlConnection(connectionString))
-            {
-                connection.Open();
-                var cmd = new NpgsqlCommand("LISTEN weather_insert", connection).ExecuteNonQuery();
-                connection.Notification += async (o, e) =>
-                {
-                    var jsonNotify = JObject.Parse(e.Payload);
-                    var weatherData = jsonNotify.ToObject<WeatherModel>();
-                    OnWeatherChange?.Invoke(this, weatherData);
-                };
-
-                while (true)
-                {
-                    await connection.WaitAsync();
-                }
-            }
-        }
-        
     }
 }

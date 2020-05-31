@@ -1,0 +1,9 @@
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/bin/Release/netcoreapp3.1/WeatherApp.Common.deps.json
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/bin/Release/netcoreapp3.1/WeatherApp.Common.dll
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/bin/Release/netcoreapp3.1/WeatherApp.Common.pdb
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/obj/Release/netcoreapp3.1/WeatherApp.Common.csprojAssemblyReference.cache
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/obj/Release/netcoreapp3.1/WeatherApp.Common.csproj.CoreCompileInputs.cache
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/obj/Release/netcoreapp3.1/WeatherApp.Common.AssemblyInfoInputs.cache
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/obj/Release/netcoreapp3.1/WeatherApp.Common.AssemblyInfo.cs
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/obj/Release/netcoreapp3.1/WeatherApp.Common.dll
+/home/maco/Documents/Project/ServerBlazor/WeatherApp.Common/obj/Release/netcoreapp3.1/WeatherApp.Common.pdb
